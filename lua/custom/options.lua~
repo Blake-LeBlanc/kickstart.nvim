@@ -42,13 +42,13 @@ opt.writebackup = true
 opt.swapfile = true
 
 -- Autocommands
-vim.cmd [[
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
-]]
+-- vim.cmd [[
+-- augroup remember_folds
+--   autocmd!
+--   autocmd BufWinLeave * mkview
+--   autocmd BufWinEnter * silent! loadview
+-- augroup END
+-- ]]
 
 vim.cmd [[
   autocmd FileType * set formatoptions=tcrqn1jp
