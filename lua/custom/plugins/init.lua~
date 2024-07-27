@@ -128,6 +128,9 @@ return {
     'norcalli/nvim-colorizer.lua',
   },
 
+  NOTE: While the below *should* cause a post-install hook to fire in Lazy.nvim to update the fzf
+    binary, it may not work. If after install, you're running into weird errors after calling, say,
+    `:History`, try manuall updating the binary with `:call fzf#install()`
   {
     'junegunn/fzf',
     dir = '~/.fzf',
