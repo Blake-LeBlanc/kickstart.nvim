@@ -91,8 +91,3 @@ vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 } }
 -- vim.cmd [[set shellcmdflag=-command]]
 -- vim.cmd [[set shellquote=\"]]
 -- vim.cmd [[set shellxquote=]]
-vim.cmd [[
-  let g:fzf_preview_window = []
-  let g:fzf_force_termguicolors = 1
-  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-]]
