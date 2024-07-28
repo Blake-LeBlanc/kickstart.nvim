@@ -272,17 +272,41 @@ require('lazy').setup({
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
+      -- require('which-key').setup()
+      -- require('which-key').setup {
 
+      -- Old spec
       -- Document existing key chains
-      require('which-key').add {
+      -- require('which-key').add {
+      --   { '<leader>c', group = '[C]ode' },
+      --   { '<leader>d', group = '[D]ocument' },
+      --   { '<leader>r', group = '[R]ename' },
+      --   { '<leader>s', group = '[S]earch' },
+      --   { '<leader>w', group = '[W]orkspace' },
+      --   { '<leader>t', group = '[T]oggle' },
+      --   { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      -- }
+
+      -- Attempt at new spec
+      require('whick-key').add {
         { '<leader>c', group = '[C]ode' },
+        { '<leader>c_', hidden = true },
         { '<leader>d', group = '[D]ocument' },
+        { '<leader>d_', hidden = true },
+        { '<leader>h', group = 'Git [H]unk' },
+        { '<leader>h_', hidden = true },
         { '<leader>r', group = '[R]ename' },
+        { '<leader>r_', hidden = true },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
+        { '<leader>s_', hidden = true },
         { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>t_', hidden = true },
+        { '<leader>w', group = '[W]orkspace' },
+        { '<leader>w_', hidden = true },
+        {
+          mode = 'v',
+          { '<leader>h', desc = 'Git [H]unk' },
+        },
       }
     end,
   },
@@ -345,11 +369,11 @@ require('lazy').setup({
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
+          --   mappings = {
+          --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          --   },
           layout_config = {
-            vertical = { width = 0.9 }
+            vertical = { width = 0.9 },
           },
         },
         -- pickers = {}
