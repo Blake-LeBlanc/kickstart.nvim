@@ -12,6 +12,45 @@ A starting point for Neovim that is:
 
 ## Installation
 
+NOTE: When installing on Windows, I've found the `mini.statusline` plugin throws a bunch of
+errors. Rather than try and sort them out, I'm including here how to modify the `init.lua` file to
+use a statusline plugin called `lualine` instead. Notice how, in the below, you comment out out the
+`mini.statusline` declaration and tack on a new plugin section immediately following the `mini`
+stuff:
+
+```
+      -- Simple and easy statusline.
+      --  You could remove this setup call if you don't like it,
+      --  and try some other statusline plugin
+      -- local statusline = require 'mini.statusline'
+      -- set use_icons to true if you have a Nerd Font
+      -- statusline.setup { use_icons = vim.g.have_nerd_font }
+
+      -- You can configure sections in the statusline by overriding their
+      -- default behavior. For example, here we set the section for
+      -- cursor location to LINE:COLUMN
+      ---@diagnostic disable-next-line: duplicate-set-field
+      -- statusline.section_location = function()
+      --   return '%2l:%-2v'
+      -- end
+
+      -- ... and there is more!
+      --  Check out: https://github.com/echasnovski/mini.nvim
+    end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'onelight'
+        }
+      }
+    end,
+  },
+```
+
 ### Install Neovim
 
 Kickstart.nvim targets *only* the latest
