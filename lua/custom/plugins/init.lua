@@ -2,6 +2,24 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+
+local function is_windows()
+  return package.config:sub(1, 1) == '\\'
+end
+
+local function get_fzf_build_command()
+  if is_windows() then
+    return nil
+  else
+    return './install --all'
+  end
+end
+
+local fzf_dir = is_windows() and vim.fn.expand '~\\fzf' or vim.fn.expand '~/.fzf'
+local fzf_executable_path = is_windows()
+    and 'C:\\Users\\blake.leblanc\\AppData\\Local\\Microsoft\\WinGet\\Packages\\junegunn.fzf_Microsoft.Winget.Source_8wekyb3d8bbwe\\fzf.exe'
+  or 'fzf'
+
 return {
   {
     'folke/tokyonight.nvim',
@@ -23,7 +41,13 @@ return {
   {
     'ggandor/leap.nvim',
     config = function()
-      require('leap').add_default_mappings()
+      -- require('leap').create_default_mappings()
+      -- NOTE: Whenever I used the above, not only did it cause nvim to complain about a clash with
+      -- mini.surround, it also did not work. Normal mode `s` would still act as vim's default
+      -- replace-like thingymajig. Only got it to work by by explicitly defining the mappings here.
+      vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
+      vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
+      vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
     end,
   },
 
@@ -135,6 +159,8 @@ return {
     'junegunn/fzf',
     dir = '~/.fzf',
     build = './install --all',
+    -- dir = fzf_dir,
+    -- build = get_fzf_build_command(),
   },
 
   {
