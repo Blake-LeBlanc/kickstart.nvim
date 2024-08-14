@@ -51,7 +51,7 @@ return {
     end,
   },
 
-  -- {
+  {
     'toppair/peek.nvim',
     event = { 'VeryLazy' },
     build = 'deno task --quiet build:fast',
@@ -66,7 +66,7 @@ return {
         filetype = { 'markdown' },
         throttle_at = 20000,
         throttle_time = 'auto',
-      } 
+      }
       vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
       vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
     end,
@@ -187,7 +187,18 @@ return {
   },
   {
     'isakbm/gitgraph.nvim',
-    opts = {},
+    opts = {
+      hooks = {
+        on_select_commit = function(commit)
+          vim.notify('DiffviewOpen ' .. commit.hash .. '^!')
+          vim.cmd('DiffviewOpen ' .. commit.hash .. '^!')
+        end,
+        on_select_range_commit = function(from, to)
+          vim.notify('DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
+          vim.cmd(':DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
+        end,
+      },
+    },
   },
   {
     'nvim-lualine/lualine.nvim',
