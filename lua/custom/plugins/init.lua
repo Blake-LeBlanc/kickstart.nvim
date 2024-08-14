@@ -102,7 +102,7 @@ return {
         -- General options
         options = {
           -- Whether to delete permanently or move into module-specific trash
-          permanent_delete = true,
+          permanent_delete = false,
           -- Whether to use for editing directories
           use_as_default_explorer = true,
         },
@@ -154,6 +154,25 @@ return {
   {
     'numToStr/Comment.nvim',
     opts = {},
+  },
+  {
+    'sindrets/diffview.nvim',
+    opts = {},
+  },
+  {
+    'isakbm/gitgraph.nvim',
+    opts = {
+      hooks = {
+        on_select_commit = function(commit)
+          vim.notify('DiffviewOpen ' .. commit.hash .. '^!')
+          vim.cmd('DiffviewOpen ' .. commit.hash .. '^!')
+        end,
+        on_select_range_commit = function(from, to)
+          vim.notify('DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
+          vim.cmd(':DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
+        end,
+      },
+    },
   },
   {
     'nvim-lualine/lualine.nvim',
