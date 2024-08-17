@@ -24,20 +24,16 @@ return {
   {
     'folke/tokyonight.nvim',
   },
-
   {
     'mcchrish/zenbones.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
   },
-
   {
     'robertmeta/nofrils',
   },
-
   {
     'rktjmp/lush.nvim',
   },
-
   {
     'ggandor/leap.nvim',
     config = function()
@@ -50,7 +46,6 @@ return {
       vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
     end,
   },
-
   {
     'toppair/peek.nvim',
     event = { 'VeryLazy' },
@@ -71,23 +66,45 @@ return {
       vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
     end,
   },
-
   {
     'markonm/traces.vim',
   },
-
   {
     'wellle/targets.vim',
   },
-
   {
     'windwp/nvim-autopairs',
   },
-
   {
     'mhinz/vim-startify',
   },
-
+  -- {
+  --   'echasnovski/mini.map',
+  --   version = '*',
+  --   config = function()
+  --     require('mini.map').setup {
+  --       -- Highlight integrations (none by default)
+  --       integrations = nil,
+  --       symbols = {
+  --         -- Encode symbols. See `:h MiniMap.config` for specification and
+  --         -- `:h MiniMap.gen_encode_symbols` for pre-built ones.
+  --         -- Default: solid blocks with 3x2 resolution.
+  --         encode = nil,
+  --         scroll_line = '█',
+  --         scroll_view = '┃',
+  --       },
+  --       window = {
+  --         -- Whether window is focusable in normal way (with `wincmd` or mouse)
+  --         focusable = false,
+  --         side = 'right',
+  --         show_integration_count = true,
+  --         width = 10,
+  --         winblend = 25,
+  --         zindex = 10,
+  --       },
+  --     }
+  --   end,
+  -- },
   {
     'echasnovski/mini.files',
     version = '*',
@@ -147,11 +164,9 @@ return {
       }
     end,
   },
-
   {
     'norcalli/nvim-colorizer.lua',
   },
-
   -- NOTE: While the below *should* cause a post-install hook to fire in Lazy.nvim to update the fzf
   -- binary, it may not work. If after install, you're running into weird errors after calling, say,
   -- `:History`, try manually updating the binary with `:call fzf#install()`
@@ -162,7 +177,6 @@ return {
     -- dir = fzf_dir,
     -- build = get_fzf_build_command(),
   },
-
   {
     'junegunn/fzf.vim',
   },
@@ -185,43 +199,56 @@ return {
     'sindrets/diffview.nvim',
     opts = {},
   },
+  -- {
+  --   'isakbm/gitgraph.nvim',
+  --   opts = {
+  --     symbols = {
+  --       merge_commit = 'M',
+  --       commit = '*',
+  --     },
+  --     format = {
+  --       timestamp = '%H:%M:%S %d-%m-%Y',
+  --       fields = {
+  --         'hash',
+  --         'timestamp',
+  --         'author',
+  --         'branch_name',
+  --         'tag',
+  --       },
+  --     },
+  --     hooks = {
+  --       on_select_commit = function(commit)
+  --         vim.notify('DiffviewOpen ' .. commit.hash .. '^!')
+  --         vim.cmd('DiffviewOpen ' .. commit.hash .. '^!')
+  --       end,
+  --       on_select_range_commit = function(from, to)
+  --         vim.notify('DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
+  --         vim.cmd(':DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
+  --       end,
+  --     },
+  --   },
+  --   keys = {
+  --     {
+  --       '<leader>gl',
+  --       function()
+  --         require('gitgraph').draw({}, { all = true, max_count = 5000 })
+  --       end,
+  --       desc = 'GitGraph - Draw',
+  --     },
+  --   },
+  -- },
   {
-    'isakbm/gitgraph.nvim',
-    opts = {
-      symbols = {
-        merge_commit = 'M',
-        commit = '*',
-      },
-      format = {
-        timestamp = '%H:%M:%S %d-%m-%Y',
-        fields = {
-          'hash',
-          'timestamp',
-          'author',
-          'branch_name',
-          'tag',
-        },
-      },
-      hooks = {
-        on_select_commit = function(commit)
-          vim.notify('DiffviewOpen ' .. commit.hash .. '^!')
-          vim.cmd('DiffviewOpen ' .. commit.hash .. '^!')
-        end,
-        on_select_range_commit = function(from, to)
-          vim.notify('DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
-          vim.cmd(':DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
-        end,
-      },
-    },
-    keys = {
-      {
-        '<leader>gl',
-        function()
-          require('gitgraph').draw({}, { all = true, max_count = 5000 })
-        end,
-        desc = 'GitGraph - Draw',
-      },
-    },
+    'Isrothy/neominimap.nvim',
+    enabled = true,
+    lazy = false,
+    init = function()
+      vim.opt.wrap = false -- Recommended
+      vim.opt.sidescrolloff = 36 -- It's recommended to set a large value
+      ---@type Neominimap.UserConfig
+      vim.g.neominimap = {
+        auto_enable = true,
+      }
+    end,
   },
   {
     'nvim-lualine/lualine.nvim',
