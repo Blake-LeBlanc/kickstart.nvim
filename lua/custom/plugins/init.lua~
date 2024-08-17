@@ -237,19 +237,19 @@ return {
   --     },
   --   },
   -- },
-  {
-    'Isrothy/neominimap.nvim',
-    enabled = true,
-    lazy = false,
-    init = function()
-      vim.opt.wrap = false -- Recommended
-      vim.opt.sidescrolloff = 36 -- It's recommended to set a large value
-      ---@type Neominimap.UserConfig
-      vim.g.neominimap = {
-        auto_enable = true,
-      }
-    end,
-  },
+  -- {
+  --   'Isrothy/neominimap.nvim',
+  --   enabled = true,
+  --   lazy = false,
+  --   init = function()
+  --     vim.opt.wrap = false -- Recommended
+  --     vim.opt.sidescrolloff = 36 -- It's recommended to set a large value
+  --     ---@type Neominimap.UserConfig
+  --     vim.g.neominimap = {
+  --       auto_enable = true,
+  --     }
+  --   end,
+  -- },
   {
     'nvim-lualine/lualine.nvim',
     config = function()

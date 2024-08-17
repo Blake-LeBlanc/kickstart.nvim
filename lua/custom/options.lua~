@@ -78,6 +78,7 @@ keymap('n', '<C-e>', ':FZF<CR>', opts)
 keymap('n', '<C-s>', ':Rg<SPACE>', opts)
 keymap('n', '<C-b>', ':Buffers<CR>', opts)
 keymap('n', '<C-h>', ':History<CR>', opts)
+keymap('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
 
 -- Global variables
 vim.g.startify_custom_header = {}
@@ -91,8 +92,3 @@ vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 } }
 -- vim.cmd [[set shellcmdflag=-command]]
 -- vim.cmd [[set shellquote=\"]]
 -- vim.cmd [[set shellxquote=]]
-vim.cmd [[
-  let g:fzf_preview_window = []
-  let g:fzf_force_termguicolors = 1
-  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-]]

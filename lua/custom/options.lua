@@ -78,6 +78,8 @@ keymap('n', '<C-e>', ':FZF<CR>', opts)
 keymap('n', '<C-s>', ':Rg<SPACE>', opts)
 keymap('n', '<C-b>', ':Buffers<CR>', opts)
 keymap('n', '<C-h>', ':History<CR>', opts)
+-- keymap('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
+keymap('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)
 
 -- Global variables
 vim.g.startify_custom_header = {}
