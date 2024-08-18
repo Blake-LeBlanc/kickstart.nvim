@@ -895,8 +895,6 @@ require('lazy').setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
-      require('mini.map').setup()
-
       -- NOTE: Replacing with lualine, setup in alternate file. Commenting out entire block here in
       -- the event you want to blanket put it back in place
       -- -- Simple and easy statusline.
