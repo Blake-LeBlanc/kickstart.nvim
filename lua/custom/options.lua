@@ -84,7 +84,7 @@ keymap('n', ']Q', ':clast<CR>zz', opts)
 -- :Telescope equivalents of same FZF commands
 keymap('n', '<C-p>', ':Telescope git_files<CR>', opts)
 keymap('n', '<C-e>', ':Telescope find_files<CR>', opts)
-keymap('n', '<C-s>', ':Telescope live_grep', opts)
+keymap('n', '<C-s>', ':Telescope live_grep<CR>', opts)
 keymap('n', '<C-b>', ':Telescope buffers<CR>', opts)
 keymap('n', '<C-h>', ':Telescope oldfiles<CR>', opts)
 

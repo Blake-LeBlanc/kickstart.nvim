@@ -314,42 +314,42 @@ require('lazy').setup({
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
-      -- require('which-key').setup()
-      require('which-key').setup {}
+      require('which-key').setup()
+      -- require('which-key').setup {}
 
       -- Old spec
       -- Document existing key chains
-      -- require('which-key').add {
-      --   { '<leader>c', group = '[C]ode' },
-      --   { '<leader>d', group = '[D]ocument' },
-      --   { '<leader>r', group = '[R]ename' },
-      --   { '<leader>s', group = '[S]earch' },
-      --   { '<leader>w', group = '[W]orkspace' },
-      --   { '<leader>t', group = '[T]oggle' },
-      --   { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      -- }
-
-      -- Attempt at new spec
       require('which-key').add {
         { '<leader>c', group = '[C]ode' },
-        { '<leader>c_', hidden = true },
         { '<leader>d', group = '[D]ocument' },
-        { '<leader>d_', hidden = true },
-        { '<leader>h', group = 'Git [H]unk' },
-        { '<leader>h_', hidden = true },
         { '<leader>r', group = '[R]ename' },
-        { '<leader>r_', hidden = true },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>s_', hidden = true },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>t_', hidden = true },
         { '<leader>w', group = '[W]orkspace' },
-        { '<leader>w_', hidden = true },
-        {
-          mode = 'v',
-          { '<leader>h', desc = 'Git [H]unk' },
-        },
+        { '<leader>t', group = '[T]oggle' },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       }
+
+      -- Attempt at new spec
+      -- require('which-key').add {
+      --   { '<leader>c', group = '[C]ode' },
+      --   { '<leader>c_', hidden = true },
+      --   { '<leader>d', group = '[D]ocument' },
+      --   { '<leader>d_', hidden = true },
+      --   { '<leader>h', group = 'Git [H]unk' },
+      --   { '<leader>h_', hidden = true },
+      --   { '<leader>r', group = '[R]ename' },
+      --   { '<leader>r_', hidden = true },
+      --   { '<leader>s', group = '[S]earch' },
+      --   { '<leader>s_', hidden = true },
+      --   { '<leader>t', group = '[T]oggle' },
+      --   { '<leader>t_', hidden = true },
+      --   { '<leader>w', group = '[W]orkspace' },
+      --   { '<leader>w_', hidden = true },
+      --   {
+      --     mode = 'v',
+      --     { '<leader>h', desc = 'Git [H]unk' },
+      --   },
+      -- }
 
       -- Register suggestion from ChatGPT
       -- require('which-key').register({
@@ -428,8 +428,12 @@ require('lazy').setup({
           layout_config = {
             vertical = { width = 0.9 },
           },
+          file_ignore_patterns = {
+            '.*~$',
+          },
         },
-        -- pickers = {}
+        -- pickers = {
+        -- },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -596,17 +600,17 @@ require('lazy').setup({
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
-            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-              buffer = event.buf,
-              group = highlight_augroup,
-              callback = vim.lsp.buf.document_highlight,
-            })
-
-            vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-              buffer = event.buf,
-              group = highlight_augroup,
-              callback = vim.lsp.buf.clear_references,
-            })
+            -- vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            --   buffer = event.buf,
+            --   group = highlight_augroup,
+            --   callback = vim.lsp.buf.document_highlight,
+            -- })
+            --
+            -- vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            --   buffer = event.buf,
+            --   group = highlight_augroup,
+            --   callback = vim.lsp.buf.clear_references,
+            -- })
 
             vim.api.nvim_create_autocmd('LspDetach', {
               group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
@@ -934,13 +938,13 @@ require('lazy').setup({
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
-      highlight = {
-        enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
+      -- highlight = {
+      --   enable = true,
+      --   -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
+      --   --  If you are experiencing weird indenting issues, add the language to
+      --   --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+      --   additional_vim_regex_highlighting = { 'ruby' },
+      -- },
       indent = { enable = true, disable = { 'ruby' } },
     },
     config = function(_, opts)
