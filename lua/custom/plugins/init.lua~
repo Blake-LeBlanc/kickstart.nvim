@@ -72,9 +72,9 @@ return {
   {
     'wellle/targets.vim',
   },
-  -- {
-  --   'windwp/nvim-autopairs',
-  -- },
+  {
+    'windwp/nvim-autopairs',
+  },
   {
     'mhinz/vim-startify',
   },
