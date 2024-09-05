@@ -40,6 +40,7 @@ opt.wildignore = { '.o', '.obj', '.bak', '.exe' }
 opt.backup = true
 opt.writebackup = true
 opt.swapfile = true
+opt.guicursor = ''
 
 -- Autocommands
 -- vim.cmd [[
@@ -73,6 +74,8 @@ keymap('n', '[q', ':cprev<CR>zz', opts)
 keymap('n', ']q', ':cnext<CR>zz', opts)
 keymap('n', '[Q', ':cfirst<CR>zz', opts)
 keymap('n', ']Q', ':clast<CR>zz', opts)
+-- NOTE: Something seems to be hijacking the default n A command, resetting here
+keymap('n', 'A', 'A', opts)
 
 -- :FZF related commands
 -- keymap('n', '<C-p>', ':GFiles<CR>', opts)
