@@ -7,7 +7,7 @@ opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.gdefault = true
-opt.textwidth = 100
+opt.textwidth = 80
 opt.colorcolumn = '+1'
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -41,6 +41,11 @@ opt.backup = true
 opt.writebackup = true
 opt.swapfile = true
 opt.guicursor = ''
+-- opt.formatlistpat = [[^\\s*\\d\\+\\.\\|^\\s*\\*]]
+-- opt.formatoptions += 'n'
+-- opt.formatoptions += 't'
+-- opt.formatoptions = 'tcrqn1jp'
+opt.formatoptions = 'tcqrlnj1p'
 
 -- Autocommands
 -- vim.cmd [[
@@ -51,9 +56,10 @@ opt.guicursor = ''
 -- augroup END
 -- ]]
 
-vim.cmd [[
-  autocmd FileType * set formatoptions=tcrqn1jp
-]]
+-- NOTE: Replaced with opt setting above
+-- vim.cmd [[
+--   autocmd FileType * set formatoptions=tcrqn1jp
+-- ]]
 
 -- Key mappings
 local keymap = vim.api.nvim_set_keymap
