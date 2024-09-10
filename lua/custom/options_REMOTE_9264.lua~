@@ -1,7 +1,5 @@
 local opt = vim.opt
 
-<<<<<<< HEAD
-=======
 opt.foldmethod = 'marker'
 opt.viewdir = vim.fn.expand '$HOME/vimfiles/view'
 opt.hlsearch = true
@@ -18,60 +16,29 @@ opt.smarttab = true
 opt.showbreak = '...'
 opt.linebreak = true
 opt.modeline = false
->>>>>>> 8c30ee831e794ba839d941c6b1355e815a767840
 opt.autoindent = true
-opt.autoread = true
-opt.backspace = { 'indent', 'eol', 'start' }
-opt.backup = true
-opt.breakindent = true
-opt.colorcolumn = '+1'
 opt.copyindent = true
-opt.cursorline = true
-opt.foldmethod = 'marker'
-opt.gdefault = true
-opt.guicursor = ''
-opt.hlsearch = true
-opt.ignorecase = true
-opt.incsearch = true
-opt.inccommand = 'split'
-opt.laststatus = 2
-opt.linebreak = true
-opt.list = true
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+opt.breakindent = true
+opt.startofline = false
 opt.matchtime = 1
-opt.modeline = false
-opt.mouse = 'a'
+opt.backspace = { 'indent', 'eol', 'start' }
+opt.autoread = true
+opt.ttimeoutlen = 10
+opt.ttyfast = true
+opt.statusline = '%<%f %h%m%r%=%-14.(%l,%c%V%) %P'
+opt.laststatus = 2
+opt.report = 0
+opt.showmode = false
+opt.showcmd = true
+opt.shortmess:remove 'S'
+opt.shortmess:append 'F'
 opt.number = true
 opt.relativenumber = true
-opt.report = 0
-opt.scrolloff = 7
-opt.shiftround = true
-opt.shiftwidth = 2
-opt.shortmess:append 'F'
-opt.shortmess:remove 'S'
-opt.showbreak = '...'
-opt.showcmd = true
-opt.showmode = false
-opt.signcolumn = 'yes'
-opt.smartcase = true
-opt.smarttab = true
-opt.splitright = true
-opt.splitbelow = true
-opt.startofline = false
-opt.statusline = '%<%f %h%m%r%=%-14.(%l,%c%V%) %P'
-opt.swapfile = true
-opt.tabstop = 2
-opt.textwidth = 100
-opt.ttimeoutlen = 300
-opt.ttyfast = true
-opt.updatetime = 250
-opt.viewdir = vim.fn.expand '$HOME/vimfiles/view'
-opt.wildignore = { '.o', '.obj', '.bak', '.exe' }
 opt.wildmenu = true
 opt.wildmode = { 'list:longest' }
+opt.wildignore = { '.o', '.obj', '.bak', '.exe' }
+opt.backup = true
 opt.writebackup = true
-<<<<<<< HEAD
-=======
 opt.swapfile = true
 opt.guicursor = ''
 -- opt.formatlistpat = [[^\\s*\\d\\+\\.\\|^\\s*\\*]]
@@ -79,7 +46,6 @@ opt.guicursor = ''
 -- opt.formatoptions += 't'
 -- opt.formatoptions = 'tcrqn1jp'
 opt.formatoptions = 'tcqrlnj1p'
->>>>>>> 8c30ee831e794ba839d941c6b1355e815a767840
 
 -- Autocommands
 -- vim.cmd [[

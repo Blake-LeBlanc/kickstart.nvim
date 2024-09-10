@@ -1,24 +1,5 @@
 local opt = vim.opt
 
-<<<<<<< HEAD
-=======
-opt.foldmethod = 'marker'
-opt.viewdir = vim.fn.expand '$HOME/vimfiles/view'
-opt.hlsearch = true
-opt.incsearch = true
-opt.ignorecase = true
-opt.smartcase = true
-opt.gdefault = true
-opt.textwidth = 80
-opt.colorcolumn = '+1'
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.shiftround = true
-opt.smarttab = true
-opt.showbreak = '...'
-opt.linebreak = true
-opt.modeline = false
->>>>>>> 8c30ee831e794ba839d941c6b1355e815a767840
 opt.autoindent = true
 opt.autoread = true
 opt.backspace = { 'indent', 'eol', 'start' }
@@ -70,16 +51,6 @@ opt.wildignore = { '.o', '.obj', '.bak', '.exe' }
 opt.wildmenu = true
 opt.wildmode = { 'list:longest' }
 opt.writebackup = true
-<<<<<<< HEAD
-=======
-opt.swapfile = true
-opt.guicursor = ''
--- opt.formatlistpat = [[^\\s*\\d\\+\\.\\|^\\s*\\*]]
--- opt.formatoptions += 'n'
--- opt.formatoptions += 't'
--- opt.formatoptions = 'tcrqn1jp'
-opt.formatoptions = 'tcqrlnj1p'
->>>>>>> 8c30ee831e794ba839d941c6b1355e815a767840
 
 -- Autocommands
 -- vim.cmd [[
@@ -90,10 +61,9 @@ opt.formatoptions = 'tcqrlnj1p'
 -- augroup END
 -- ]]
 
--- NOTE: Replaced with opt setting above
--- vim.cmd [[
---   autocmd FileType * set formatoptions=tcrqn1jp
--- ]]
+vim.cmd [[
+  autocmd FileType * set formatoptions=tcrqn1jp
+]]
 
 -- Key mappings
 local keymap = vim.api.nvim_set_keymap

@@ -61,9 +61,10 @@ opt.writebackup = true
 -- augroup END
 -- ]]
 
-vim.cmd [[
-  autocmd FileType * set formatoptions=tcrqn1jp
-]]
+-- NOTE: Replaced with opt setting above
+-- vim.cmd [[
+--   autocmd FileType * set formatoptions=tcrqn1jp
+-- ]]
 
 -- Key mappings
 local keymap = vim.api.nvim_set_keymap
