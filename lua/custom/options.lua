@@ -42,7 +42,7 @@ opt.startofline = false
 opt.statusline = '%<%f %h%m%r%=%-14.(%l,%c%V%) %P'
 opt.swapfile = true
 opt.tabstop = 2
-opt.textwidth = 80
+opt.textwidth = 100
 opt.ttimeoutlen = 300
 opt.ttyfast = true
 opt.updatetime = 250
