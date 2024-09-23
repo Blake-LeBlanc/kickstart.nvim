@@ -322,4 +322,10 @@ return {
       }
     end,
   },
+  -- {
+  --   'nvim-telesecope/telescope-frecency.nvim',
+  --   config = function()
+  --     require('telescope').load_extension 'frecency'
+  --   end,
+  -- },
 }

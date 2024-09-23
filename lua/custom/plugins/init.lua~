@@ -312,4 +312,20 @@ return {
       'nvim-lua/plenary.nvim',
     },
   },
+  {
+    'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup {
+        -- defaults
+      }
+    end,
+  },
+  {
+    'nvim-telesecope/telescope-frecency.nvim',
+    config = function()
+      require('telescope').load_extension 'frecency'
+    end,
+  },
 }
