@@ -850,7 +850,7 @@ require('lazy').setup({
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
+      -- require('mini.surround').setup()
 
       -- NOTE: Replacing with lualine, setup in alternate file. Commenting out entire block here in
       -- the event you want to blanket put it back in place
