@@ -368,6 +368,7 @@ require('lazy').setup({
           mappings = {
             i = {
               -- ['<C-enter>'] = 'to_fuzzy_refine',
+              ['<C-s>'] = 'to_fuzzy_refine',
             },
           },
           layout_config = {
