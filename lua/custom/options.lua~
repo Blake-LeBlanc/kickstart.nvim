@@ -9,6 +9,7 @@ opt.colorcolumn = '+1'
 opt.copyindent = true
 opt.cursorline = false
 opt.foldmethod = 'marker'
+opt.formatoptions = 'tcrqn1jp'
 opt.gdefault = true
 opt.guicursor = ''
 opt.hlsearch = true
@@ -42,7 +43,7 @@ opt.startofline = false
 opt.statusline = '%<%f %h%m%r%=%-14.(%l,%c%V%) %P'
 opt.swapfile = true
 opt.tabstop = 2
-opt.textwidth = 80
+opt.textwidth = 100
 opt.ttimeoutlen = 300
 opt.ttyfast = true
 opt.updatetime = 250
@@ -62,9 +63,9 @@ opt.writebackup = true
 -- ]]
 
 -- NOTE: Replaced with opt setting above
--- vim.cmd [[
---   autocmd FileType * set formatoptions=tcrqn1jp
--- ]]
+vim.cmd [[
+  autocmd FileType * set formatoptions=tcrqn1jp
+]]
 
 -- Key mappings
 local keymap = vim.api.nvim_set_keymap

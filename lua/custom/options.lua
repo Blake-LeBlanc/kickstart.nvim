@@ -9,6 +9,7 @@ opt.colorcolumn = '+1'
 opt.copyindent = true
 opt.cursorline = false
 opt.foldmethod = 'marker'
+opt.formatoptions = 'tcrqn1jp'
 opt.gdefault = true
 opt.guicursor = ''
 opt.hlsearch = true
@@ -62,9 +63,9 @@ opt.writebackup = true
 -- ]]
 
 -- NOTE: Replaced with opt setting above
--- vim.cmd [[
---   autocmd FileType * set formatoptions=tcrqn1jp
--- ]]
+vim.cmd [[
+  autocmd FileType * set formatoptions=tcrqn1jp
+]]
 
 -- Key mappings
 local keymap = vim.api.nvim_set_keymap
@@ -87,6 +88,7 @@ keymap('n', '[Q', ':cfirst<CR>zz', opts)
 keymap('n', ']Q', ':clast<CR>zz', opts)
 -- NOTE: Something seems to be hijacking the default n A command, resetting here
 keymap('n', 'A', 'A', opts)
+keymap('n', '<leader>z', ':ZenMode<CR>', opts)
 
 -- :FZF related commands
 -- keymap('n', '<C-p>', ':GFiles<CR>', opts)
