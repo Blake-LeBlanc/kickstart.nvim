@@ -3,6 +3,8 @@
 --
 -- See the kickstart.nvim README for more information
 
+-- Testing for delta git diff view thingy
+
 local function is_windows()
   return package.config:sub(1, 1) == '\\'
 end
@@ -226,7 +228,7 @@ return {
           disabled_filetypes = {
             statusline = {},
             winbar = {},
-            'NeoTree',
+            'neo-tree',
           },
           ignore_focus = {},
           always_divide_middle = true,
