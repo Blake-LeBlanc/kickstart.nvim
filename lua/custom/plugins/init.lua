@@ -226,6 +226,7 @@ return {
           disabled_filetypes = {
             statusline = {},
             winbar = {},
+            'neo-tree',
           },
           ignore_focus = {},
           always_divide_middle = true,
