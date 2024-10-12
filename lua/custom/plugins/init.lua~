@@ -3,8 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 
--- Testing for delta git diff view thingy
-
 local function is_windows()
   return package.config:sub(1, 1) == '\\'
 end
