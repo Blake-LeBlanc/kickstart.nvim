@@ -1108,6 +1108,19 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
     },
-    opts = {},
+    opts = {
+      -- feeds = {
+      --   {
+      --     -- FIXME: What should the "key" be for the link?
+      --
+      --     -- url = 'https://neovim.io/news.xml',
+      --     -- name = 'neovim',
+      --     -- tags = { 'tech', 'vim', 'news' }, -- a simple url pasted here is also fine
+      --
+      --     -- FIXME: Also trying to include as a "simple url pasted here"...
+      --     -- 'https://neovim.io/news.xml',
+      --   },
+      -- },
+    },
   },
 }
