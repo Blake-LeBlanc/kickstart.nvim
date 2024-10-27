@@ -388,6 +388,7 @@ require('lazy').setup({
               '--color',
               'never',
               '--no-require-git',
+              '--no-ignore',
             },
           },
         },
