@@ -389,9 +389,8 @@ require('lazy').setup({
               'never',
               '--no-require-git',
               '--no-ignore',
-},
-            'no_ignore' = true,
-},
+            },
+          },
         },
         extensions = {
           ['ui-select'] = {
