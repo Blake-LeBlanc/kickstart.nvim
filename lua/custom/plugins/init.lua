@@ -1122,4 +1122,11 @@ return {
   --     },
   --   },
   -- },
+  {
+    'bullets-vim/bullets.vim',
+    -- opts = {},
+    config = function()
+      require('peek').setup()
+    end,
+  },
 }

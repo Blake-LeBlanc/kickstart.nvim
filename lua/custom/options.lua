@@ -10,6 +10,9 @@ opt.copyindent = true
 opt.cursorline = false
 opt.foldmethod = 'marker'
 opt.formatoptions = 'tcrqn1jp'
+-- opt.formatoptions = 'torqnj1p'
+-- NOTE: This was an attempt to have Neovim natively position the cursor inline with the above
+-- bulletpoint, etc. I wasn't quite able to get it to work.
 opt.gdefault = true
 opt.guicursor = ''
 opt.hlsearch = true
