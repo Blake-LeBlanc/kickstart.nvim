@@ -21,13 +21,13 @@ local fzf_executable_path = is_windows()
   or 'fzf'
 
 return {
-  {
-    'folke/tokyonight.nvim',
-  },
-  {
-    'mcchrish/zenbones.nvim',
-    dependencies = { 'rktjmp/lush.nvim' },
-  },
+  -- {
+  --   'folke/tokyonight.nvim',
+  -- },
+  -- {
+  --   'mcchrish/zenbones.nvim',
+  --   dependencies = { 'rktjmp/lush.nvim' },
+  -- },
   {
     'robertmeta/nofrils',
   },
@@ -1067,38 +1067,31 @@ return {
       { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
-  {
-    'nvim-telescope/telescope-file-browser.nvim',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-  },
-  {
-    'folke/zen-mode.nvim',
-    opts = {
-      window = {
-        backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
-        -- height and width can be:
-        -- * an absolute number of cells when > 1
-        -- * a percentage of the width / height of the editor when <= 1
-        -- * a function that returns the width or the height
-        width = 100, -- width of the Zen window
-        height = 1, -- height of the Zen window
-        -- by default, no options are changed for the Zen window
-        -- uncomment any of the options below, or add other vim.wo options you want to apply
-        options = {
-          -- signcolumn = "no", -- disable signcolumn
-          -- number = false, -- disable number column
-          -- relativenumber = false, -- disable relative numbers
-          -- cursorline = false, -- disable cursorline
-          -- cursorcolumn = false, -- disable cursor column
-          -- foldcolumn = "0", -- disable fold column
-          -- list = false, -- disable whitespace characters
-        },
-      },
-    },
-  },
+  -- {
+  --   'folke/zen-mode.nvim',
+  --   opts = {
+  --     window = {
+  --       backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+  --       -- height and width can be:
+  --       -- * an absolute number of cells when > 1
+  --       -- * a percentage of the width / height of the editor when <= 1
+  --       -- * a function that returns the width or the height
+  --       width = 100, -- width of the Zen window
+  --       height = 1, -- height of the Zen window
+  --       -- by default, no options are changed for the Zen window
+  --       -- uncomment any of the options below, or add other vim.wo options you want to apply
+  --       options = {
+  --         -- signcolumn = "no", -- disable signcolumn
+  --         -- number = false, -- disable number column
+  --         -- relativenumber = false, -- disable relative numbers
+  --         -- cursorline = false, -- disable cursorline
+  --         -- cursorcolumn = false, -- disable cursor column
+  --         -- foldcolumn = "0", -- disable fold column
+  --         -- list = false, -- disable whitespace characters
+  --       },
+  --     },
+  --   },
+  -- },
   -- {
   --   'neo451/feed.nvim',
   --   dependencies = {
@@ -1127,5 +1120,6 @@ return {
     -- opts = {},
     config = function()
       require('peek').setup()
-},
+    end,
+  },
 }
