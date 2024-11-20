@@ -24,10 +24,10 @@ return {
   -- {
   --   'folke/tokyonight.nvim',
   -- },
-  -- {
-  --   'mcchrish/zenbones.nvim',
-  --   dependencies = { 'rktjmp/lush.nvim' },
-  -- },
+  {
+    'mcchrish/zenbones.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+  },
   {
     'robertmeta/nofrils',
   },
@@ -1115,11 +1115,11 @@ return {
   --     },
   --   },
   -- },
-  {
-    'bullets-vim/bullets.vim',
-    -- opts = {},
-    config = function()
-      require('peek').setup()
-    end,
-  },
+  -- {
+  --   'bullets-vim/bullets.vim',
+  --   -- opts = {},
+  --   config = function()
+  --     require('peek').setup()
+  --   end,
+  -- },
 }
