@@ -1116,6 +1116,8 @@ return {
   --   },
   -- },
   -- {
+  -- NOTE: Seems to interfere with the quality of macro recordings when specific keypresses are
+  -- involved
   --   'bullets-vim/bullets.vim',
   --   -- opts = {},
   --   config = function()
