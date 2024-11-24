@@ -1124,4 +1124,19 @@ return {
   --     require('bullets').setup()
   --   end,
   -- },
+  {
+    'sphamba/smear-cursor.nvim',
+    opts = {
+      legacy_computing_symbols_support = false,
+    },
+  },
+  -- {
+  --   'karb94/neoscroll.nvim',
+  --   opts = {
+  --     -- easing = 'quadratic',
+  --     -- easing = 'sine',
+  --     -- easing = 'quartic',
+  --     easing = 'quintic',
+  --   },
+  -- },
 }
