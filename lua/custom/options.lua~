@@ -16,8 +16,7 @@ opt.formatoptions = 'tcrqn1jp'
 opt.gdefault = true
 -- opt.guicursor = ''
 -- Enable blinking together with different cursor shapes for insert/command mode, and cursor highlighting:
--- opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
-opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait200-blinkoff100-blinkon50-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
+opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
 opt.hlsearch = true
 opt.ignorecase = true
 opt.incsearch = true

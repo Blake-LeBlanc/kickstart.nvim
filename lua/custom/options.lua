@@ -96,6 +96,7 @@ keymap('n', 'A', 'A', opts)
 keymap('n', '<leader>z', ':ZenMode<CR>', opts)
 keymap('n', '<leader>nt', ':Neotree toggle left reveal_force_cwd<CR><C-w>=', opts)
 -- keymap('n', '<leader>nt', ':Neotree toggle current reveal_force_cwd<CR>', opts)
+keymap('n', '<leader>cd', ':cd %:p:h<CR>', opts)
 
 -- :FZF related commands
 -- keymap('n', '<C-p>', ':GFiles<CR>', opts)
