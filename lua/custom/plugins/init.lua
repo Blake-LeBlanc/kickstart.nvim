@@ -1124,12 +1124,12 @@ return {
   --     require('bullets').setup()
   --   end,
   -- },
-  {
-    'sphamba/smear-cursor.nvim',
-    opts = {
-      legacy_computing_symbols_support = false,
-    },
-  },
+  -- {
+  --   'sphamba/smear-cursor.nvim',
+  --   opts = {
+  --     legacy_computing_symbols_support = false,
+  --   },
+  -- },
   -- {
   --   'karb94/neoscroll.nvim',
   --   opts = {
