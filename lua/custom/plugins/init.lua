@@ -1128,6 +1128,8 @@ return {
     'sphamba/smear-cursor.nvim',
     opts = {
       legacy_computing_symbols_support = false,
+      -- cursor_color = '#09FDFF',
+      cursor_color = '#2C3336',
     },
   },
   -- {
