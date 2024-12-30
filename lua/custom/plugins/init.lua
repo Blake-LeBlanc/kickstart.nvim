@@ -1124,14 +1124,14 @@ return {
   --     require('bullets').setup()
   --   end,
   -- },
-  {
-    'sphamba/smear-cursor.nvim',
-    opts = {
-      legacy_computing_symbols_support = false,
-      -- cursor_color = '#09FDFF',
-      cursor_color = '#2C3336',
-    },
-  },
+  -- {
+  --   'sphamba/smear-cursor.nvim',
+  --   opts = {
+  --     legacy_computing_symbols_support = false,
+  --     -- cursor_color = '#09FDFF',
+  --     cursor_color = '#2C3336',
+  --   },
+  -- },
   -- {
   --   'karb94/neoscroll.nvim',
   --   opts = {
@@ -1141,4 +1141,8 @@ return {
   --     easing = 'quintic',
   --   },
   -- },
+  {
+    'brenoprata10/nvim-highlight-colors',
+    opts = {},
+  },
 }
