@@ -115,7 +115,7 @@ keymap('n', '<C-m>', ':FzfLua marks<CR>', opts)
 keymap('n', 'gd', ':FzfLua lsp_definitions<CR>', opts)
 keymap('n', 'gr', ':FzfLua lsp_references<CR>', opts)
 keymap('n', 'gI', ':FzfLua lsp_implementations<CR>', opts)
-keymap('n', '<leader>D', ':FzfLua lsp_type_definitions<CR>', opts)
+keymap('n', '<leader>D', ':FzfLua lsp_typedefs<CR>', opts)
 keymap('n', '<leader>ds', ':FzfLua lsp_document_symbols<CR>', opts)
 keymap('n', '<leader>ws', ':FzfLua lsp_workspace_symbols<CR>', opts)
 
