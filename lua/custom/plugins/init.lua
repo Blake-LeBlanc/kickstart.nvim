@@ -334,13 +334,13 @@ return {
   --     }
   --   end,
   -- },
-  {
-    'nvim-telescope/telescope-file-browser.nvim',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-  },
+  -- {
+  --   'nvim-telescope/telescope-file-browser.nvim',
+  --   dependencies = {
+  --     'nvim-telescope/telescope.nvim',
+  --     'nvim-lua/plenary.nvim',
+  --   },
+  -- },
   {
     'kylechui/nvim-surround',
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
