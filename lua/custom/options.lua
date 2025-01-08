@@ -111,6 +111,7 @@ keymap('n', '<C-e>', ':FzfLua files<CR>', opts)
 keymap('n', '<C-s>', ':FzfLua grep<CR>', opts)
 keymap('n', '<C-b>', ':FzfLua buffers<CR>', opts)
 keymap('n', '<C-h>', ':FzfLua oldfiles<CR>', opts)
+keymap('n', '<C-m>', ':FzfLua marks<CR>', opts)
 
 -- :Telescope equivalents of same FZF commands
 -- keymap('n', '<C-p>', ':Telescope git_files<CR>', opts)
@@ -120,7 +121,7 @@ keymap('n', '<C-h>', ':FzfLua oldfiles<CR>', opts)
 -- keymap('n', '<C-h>', ':Telescope oldfiles<CR>', opts)
 
 -- keymap('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
-keymap('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)
+-- keymap('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)
 
 -- Global variables
 vim.g.startify_custom_header = {}
