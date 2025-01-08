@@ -206,6 +206,11 @@ return {
       keymap = {
         builtin = { true, ['<Esc>'] = 'hide' },
       },
+      winopts = {
+        preview = {
+          hidden = true,
+        },
+      },
     },
   },
   -- {
