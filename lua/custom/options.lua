@@ -105,12 +105,19 @@ keymap('n', '<leader>cd', ':cd %:p:h<CR>', opts)
 -- keymap('n', '<C-b>', ':Buffers<CR>', opts)
 -- keymap('n', '<C-h>', ':History<CR>', opts)
 
+-- :fzf-lua equivalents of same FZF commands
+keymap('n', '<C-p>', ':FzfLua git_files<CR>', opts)
+keymap('n', '<C-e>', ':FzfLua files<CR>', opts)
+keymap('n', '<C-s>', ':FzfLua grep<CR>', opts)
+keymap('n', '<C-b>', ':FzfLua buffers<CR>', opts)
+keymap('n', '<C-h>', ':FzfLua oldfiles<CR>', opts)
+
 -- :Telescope equivalents of same FZF commands
-keymap('n', '<C-p>', ':Telescope git_files<CR>', opts)
-keymap('n', '<C-e>', ':Telescope find_files<CR>', opts)
-keymap('n', '<C-s>', ':Telescope live_grep<CR>', opts)
-keymap('n', '<C-b>', ':Telescope buffers<CR>', opts)
-keymap('n', '<C-h>', ':Telescope oldfiles<CR>', opts)
+-- keymap('n', '<C-p>', ':Telescope git_files<CR>', opts)
+-- keymap('n', '<C-e>', ':Telescope find_files<CR>', opts)
+-- keymap('n', '<C-s>', ':Telescope live_grep<CR>', opts)
+-- keymap('n', '<C-b>', ':Telescope buffers<CR>', opts)
+-- keymap('n', '<C-h>', ':Telescope oldfiles<CR>', opts)
 
 -- keymap('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
 keymap('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)

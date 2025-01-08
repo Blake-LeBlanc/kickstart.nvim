@@ -193,16 +193,29 @@ return {
     'junegunn/fzf.vim',
   },
   {
-    'akinsho/toggleterm.nvim',
-    version = '*',
-    config = true,
-
-    -- config = function()
-    --   require('toggleterm').setup{(
-    --     -- defaults
-    --   )}
-    -- end,
+    'ibhagwan/fzf-lua',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    opts = {
+      defaults = {
+        git_icons = false,
+        file_icons = false,
+        color_icons = false,
+      },
+    },
   },
+  -- {
+  --   'akinsho/toggleterm.nvim',
+  --   version = '*',
+  --   config = true,
+  --
+  --   -- config = function()
+  --   --   require('toggleterm').setup{(
+  --   --     -- defaults
+  --   --   )}
+  --   -- end,
+  -- },
   {
     'numToStr/Comment.nvim',
     opts = {},

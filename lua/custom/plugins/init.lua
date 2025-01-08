@@ -192,6 +192,22 @@ return {
   {
     'junegunn/fzf.vim',
   },
+  {
+    'ibhagwan/fzf-lua',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    opts = {
+      defaults = {
+        git_icons = false,
+        file_icons = false,
+        color_icons = false,
+      },
+      keymap = {
+        builtin = { true, ['<Esc>'] = 'hide' },
+      },
+    },
+  },
   -- {
   --   'akinsho/toggleterm.nvim',
   --   version = '*',
