@@ -263,10 +263,8 @@ return {
           -- How to disable  text coloring for diff and diagnostics? `colored = false`
           lualine_b = {
             'branch',
-            -- "diff",
-            -- "diagnostics"
-            diff,
-            diagnostics,
+            'diff',
+            'diagnostics',
           },
           lualine_c = { 'filename' },
           lualine_x = { 'encoding', 'fileformat', 'filetype' },
