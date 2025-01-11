@@ -94,8 +94,9 @@ keymap('n', ']Q', ':clast<CR>zz', opts)
 -- NOTE: Something seems to be hijacking the default n A command, resetting here
 keymap('n', 'A', 'A', opts)
 keymap('n', '<leader>z', ':ZenMode<CR>', opts)
-keymap('n', '<leader>nt', ':Neotree toggle left reveal_force_cwd<CR><C-w>=', opts)
+-- keymap('n', '<leader>nt', ':Neotree toggle left reveal_force_cwd<CR><C-w>=', opts)
 -- keymap('n', '<leader>nt', ':Neotree toggle current reveal_force_cwd<CR>', opts)
+-- keymap('n', '<leader>nt', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>cd', ':cd %:p:h<CR>', opts)
 
 -- :FZF related commands
@@ -115,7 +116,7 @@ keymap('n', '<C-m>', ':FzfLua marks<CR>', opts)
 keymap('n', 'gd', ':FzfLua lsp_definitions<CR>', opts)
 keymap('n', 'gr', ':FzfLua lsp_references<CR>', opts)
 keymap('n', 'gI', ':FzfLua lsp_implementations<CR>', opts)
-keymap('n', '<leader>D', ':FzfLua lsp_type_definitions<CR>', opts)
+keymap('n', '<leader>D', ':FzfLua lsp_typedefs<CR>', opts)
 keymap('n', '<leader>ds', ':FzfLua lsp_document_symbols<CR>', opts)
 keymap('n', '<leader>ws', ':FzfLua lsp_workspace_symbols<CR>', opts)
 
