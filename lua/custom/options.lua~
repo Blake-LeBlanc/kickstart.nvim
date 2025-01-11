@@ -130,6 +130,10 @@ keymap('n', '<leader>ws', ':FzfLua lsp_workspace_symbols<CR>', opts)
 -- keymap('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
 -- keymap('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)
 
+-- Yazi
+keymap('n', '<leader>y', ':Yazi<CR>', opts)
+keymap('n', '<leader>cw', ':Yazi cwd<CR>', opts)
+
 -- Global variables
 vim.g.startify_custom_header = {}
 
