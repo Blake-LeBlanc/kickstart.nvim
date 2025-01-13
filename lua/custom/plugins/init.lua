@@ -24,16 +24,16 @@ return {
   -- {
   --   'folke/tokyonight.nvim',
   -- },
-  {
-    'mcchrish/zenbones.nvim',
-    dependencies = { 'rktjmp/lush.nvim' },
-  },
+  -- {
+  --   'mcchrish/zenbones.nvim',
+  --   dependencies = { 'rktjmp/lush.nvim' },
+  -- },
   {
     'robertmeta/nofrils',
   },
-  {
-    'rktjmp/lush.nvim',
-  },
+  -- {
+  --   'rktjmp/lush.nvim',
+  -- },
   {
     'ggandor/leap.nvim',
     config = function()
@@ -48,7 +48,7 @@ return {
   },
   {
     'toppair/peek.nvim',
-    event = { 'VeryLazy' },
+    event = 'VeryLazy',
     build = 'deno task --quiet build:fast',
     config = function()
       require('peek').setup {
@@ -75,9 +75,9 @@ return {
   {
     'windwp/nvim-autopairs',
   },
-  {
-    'mhinz/vim-startify',
-  },
+  -- {
+  --   'mhinz/vim-startify',
+  -- },
   -- {
   --   'goolord/alpha-nvim',
   --   -- dependencies = { 'echasnovski/mini.icons' },
@@ -119,6 +119,7 @@ return {
   -- },
   {
     'echasnovski/mini.files',
+    event = 'VeryLazy',
     version = '*',
     config = function()
       require('mini.files').setup {
@@ -182,16 +183,16 @@ return {
   -- NOTE: While the below *should* cause a post-install hook to fire in Lazy.nvim to update the fzf
   -- binary, it may not work. If after install, you're running into weird errors after calling, say,
   -- `:History`, try manually updating the binary with `:call fzf#install()`
-  {
-    'junegunn/fzf',
-    dir = '~/.fzf',
-    build = './install --all',
-    -- dir = fzf_dir,
-    -- build = get_fzf_build_command(),
-  },
-  {
-    'junegunn/fzf.vim',
-  },
+  -- {
+  --   'junegunn/fzf',
+  --   dir = '~/.fzf',
+  --   build = './install --all',
+  --   -- dir = fzf_dir,
+  --   -- build = get_fzf_build_command(),
+  -- },
+  -- {
+  --   'junegunn/fzf.vim',
+  -- },
   {
     'ibhagwan/fzf-lua',
     dependencies = {
@@ -210,6 +211,7 @@ return {
         preview = {
           hidden = true,
         },
+        fullscreen = true,
       },
     },
   },
@@ -230,6 +232,7 @@ return {
   },
   {
     'sindrets/diffview.nvim',
+    event = 'VeryLazy',
     opts = {},
   },
   {
@@ -363,7 +366,8 @@ return {
 
   {
     'kdheepak/lazygit.nvim',
-    lazy = true,
+    -- lazy = true,
+    event = 'VeryLazy',
     cmd = {
       'LazyGit',
       'LazyGitConfig',
@@ -455,35 +459,36 @@ return {
   --     easing = 'quintic',
   --   },
   -- },
-  {
-    'brenoprata10/nvim-highlight-colors',
-    opts = {},
-  },
   -- {
-  --   'nvim-tree/nvim-tree.lua',
-  --   version = '*',
-  --   lazy = false,
-  --   dependencies = {
-  --     'nvim-tree/nvim-web-devicons',
-  --   },
-  --   -- config = function()
-  --   --   require('nvim-tree').setup {}
-  --   -- end,
-  --   opts = {
-  --     renderer = {
-  --       icons = {
-  --         show = {
-  --           file = false,
-  --           folder = false,
-  --           folder_arrow = true,
-  --           git = true,
-  --           modified = true,
-  --           hidden = true,
-  --         },
-  --       },
-  --     },
-  --   },
+  --   'brenoprata10/nvim-highlight-colors',
+  --   opts = {},
   -- },
+  {
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
+    event = 'VeryLazy',
+    lazy = false,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    -- config = function()
+    --   require('nvim-tree').setup {}
+    -- end,
+    opts = {
+      renderer = {
+        icons = {
+          show = {
+            file = false,
+            folder = false,
+            folder_arrow = true,
+            git = true,
+            modified = true,
+            hidden = true,
+          },
+        },
+      },
+    },
+  },
   {
     'mikavilpas/yazi.nvim',
     event = 'VeryLazy',
