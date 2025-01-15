@@ -134,6 +134,9 @@ keymap('n', '<leader>ws', ':FzfLua lsp_workspace_symbols<CR>', opts)
 keymap('n', '<leader>y', ':Yazi<CR>', opts)
 keymap('n', '<leader>cw', ':Yazi cwd<CR>', opts)
 
+-- Zenmode
+keymap('n', '<leader>z', ':ZenMode<CR>', opts)
+
 -- Global variables
 vim.g.startify_custom_header = {}
 
@@ -146,3 +149,6 @@ vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 } }
 -- vim.cmd [[set shellcmdflag=-command]]
 -- vim.cmd [[set shellquote=\"]]
 -- vim.cmd [[set shellxquote=]]
+
+-- Lazygit
+vim.g.lazygit_floating_window_scaling_factor = 1.0
