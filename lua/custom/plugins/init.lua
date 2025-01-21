@@ -226,7 +226,6 @@ return {
         preview = {
           hidden = true,
         },
-        fullscreen = true,
       },
     },
   },

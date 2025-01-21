@@ -266,7 +266,7 @@ return {
             statusline = {},
             winbar = {},
             'neo-tree',
-            'NVimTree',
+            'NvimTree',
           },
           ignore_focus = {},
           always_divide_middle = true,
