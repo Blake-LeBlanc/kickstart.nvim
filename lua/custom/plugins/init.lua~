@@ -94,7 +94,9 @@ return {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     config = true,
-    opts = {},
+    opts = {
+      -- defaults
+    },
   },
   -- {
   --   'mhinz/vim-startify',
@@ -490,7 +492,7 @@ return {
     'nvim-tree/nvim-tree.lua',
     version = '*',
     event = 'VeryLazy',
-    lazy = false,
+    -- lazy = false,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
