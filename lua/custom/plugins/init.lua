@@ -24,10 +24,11 @@ return {
   -- {
   --   'folke/tokyonight.nvim',
   -- },
-  -- {
-  --   'mcchrish/zenbones.nvim',
-  --   dependencies = { 'rktjmp/lush.nvim' },
-  -- },
+  {
+    'mcchrish/zenbones.nvim',
+    event = 'VeryLazy',
+    dependencies = { 'rktjmp/lush.nvim' },
+  },
   {
     'robertmeta/nofrils',
   },
@@ -82,12 +83,20 @@ return {
   },
   {
     'markonm/traces.vim',
+    event = 'VeryLazy',
   },
   {
+    -- The main reason I use this is because it allows for bi-directional searching near cursor position
     'wellle/targets.vim',
+    event = 'VeryLazy',
   },
   {
     'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+    opts = {
+      -- defaults
+    },
   },
   -- {
   --   'mhinz/vim-startify',
