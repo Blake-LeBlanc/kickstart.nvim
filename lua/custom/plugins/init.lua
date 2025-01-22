@@ -491,6 +491,7 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     -- NOTE: Per author, do not lazyload. Due to how plugin works, nothing would be gained anyway.
+    -- See https://github.com/nvim-tree/nvim-tree.lua/discussions/2298
     version = '*',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
