@@ -8,6 +8,7 @@ opt.breakindent = true
 opt.colorcolumn = '+1'
 opt.copyindent = true
 opt.cursorline = false
+opt.expandtab = true
 opt.foldmethod = 'marker'
 opt.formatoptions = 'tcrqn1jp'
 -- opt.formatoptions = 'torqnj1p'
@@ -33,7 +34,7 @@ opt.relativenumber = true
 opt.report = 0
 opt.scrolloff = 7
 opt.shiftround = true
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.shortmess:append 'F'
 opt.shortmess:remove 'S'
 opt.showbreak = '...'
@@ -42,12 +43,13 @@ opt.showmode = false
 opt.signcolumn = 'yes'
 opt.smartcase = true
 opt.smarttab = true
+opt.softtabstop = 4
 opt.splitright = true
 opt.splitbelow = true
 opt.startofline = false
 opt.statusline = '%<%f %h%m%r%=%-14.(%l,%c%V%) %P'
 opt.swapfile = true
-opt.tabstop = 2
+opt.tabstop = 4
 opt.textwidth = 100
 opt.ttimeoutlen = 300
 opt.ttyfast = true
