@@ -85,6 +85,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
 local user_profile = vim.fn.getenv 'USERPROFILE' or vim.fn.getenv 'HOME'
+user_profile = tostring(user_profile)
 if vim.fn.has 'win32' == 1 then
   vim.g.python3_host_prog = user_profile .. '/.pyenv/pyenv-win/versions/3.13.1/python.exe'
 else
