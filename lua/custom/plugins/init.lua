@@ -39,10 +39,13 @@ return {
     'jaredgorski/fogbell.vim',
   },
   {
-    'pdgouyon/vim-yin-yang',
+    'pgdouyon/vim-yin-yang',
   },
   {
     'cideM/yui',
+  },
+  {
+    'vim-scripts/zenesque.vim',
   },
 
   -- {
