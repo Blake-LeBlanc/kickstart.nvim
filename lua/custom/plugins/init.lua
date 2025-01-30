@@ -32,6 +32,19 @@ return {
   {
     'robertmeta/nofrils',
   },
+  {
+    'pbrisbin/vim-colors-off',
+  },
+  {
+    'jaredgorski/fogbell.vim',
+  },
+  {
+    'pdgouyon/vim-yin-yang',
+  },
+  {
+    'cideM/yui',
+  },
+
   -- {
   --   'rktjmp/lush.nvim',
   -- },
