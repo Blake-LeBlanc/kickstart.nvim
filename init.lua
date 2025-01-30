@@ -84,8 +84,12 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
-local user_profile = vim.fn.getenv 'USERPROFILE'
-vim.g.python3_host_prog = user_profile .. '/.pyenv/pyenv-win/versions/3.13.1/python.exe'
+local user_profile = vim.fn.getenv 'USERPROFILE' or vim.fn.getenv 'HOME'
+if vim.fn.has 'win32' == 1 then
+  vim.g.python3_host_prog = user_profile .. '/.pyenv/pyenv-win/versions/3.13.1/python.exe'
+else
+  vim.g.python3_host_prog = user_profile .. '/.pyenv/verisons/3.13.1/bin/python3'
+end
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
