@@ -35,18 +35,18 @@ return {
   {
     'pbrisbin/vim-colors-off',
   },
-  {
-    'jaredgorski/fogbell.vim',
-  },
+  -- {
+  --   'jaredgorski/fogbell.vim',
+  -- },
   {
     'pgdouyon/vim-yin-yang',
   },
-  {
-    'cideM/yui',
-  },
-  {
-    'vim-scripts/zenesque.vim',
-  },
+  -- {
+  --   'cideM/yui',
+  -- },
+  -- {
+  --   'vim-scripts/zenesque.vim',
+  -- },
 
   -- {
   --   'rktjmp/lush.nvim',
