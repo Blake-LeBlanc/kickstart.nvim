@@ -32,15 +32,15 @@ return {
   {
     'robertmeta/nofrils',
   },
-  {
-    'pbrisbin/vim-colors-off',
-  },
+  -- {
+  --   'pbrisbin/vim-colors-off',
+  -- },
   -- {
   --   'jaredgorski/fogbell.vim',
   -- },
-  {
-    'pgdouyon/vim-yin-yang',
-  },
+  -- {
+  --   'pgdouyon/vim-yin-yang',
+  -- },
   -- {
   --   'cideM/yui',
   -- },
