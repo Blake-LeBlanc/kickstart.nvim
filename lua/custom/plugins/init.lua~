@@ -20,6 +20,64 @@ local fzf_executable_path = is_windows()
     and 'C:\\Users\\blake.leblanc\\AppData\\Local\\Microsoft\\WinGet\\Packages\\junegunn.fzf_Microsoft.Winget.Source_8wekyb3d8bbwe\\fzf.exe'
   or 'fzf'
 
+-- custom commands for nvim-tree.lua{{{
+-- https://github.com/nvim-tree/nvim-tree.lua/discussions/1896#discussioncomment-6828472
+-- NOTE: Can't seem to get this to work properly... The problem I seem to be running into is that
+-- the keymapping is part of my options.lua file, while the underlying functions this command is
+-- trying to execute resides here, in the init.lua file. Let me try setting up the keymap here, just
+-- got to find something that's not currently in use... Okay, so that seems to work, it calls the
+-- function! However! It errors out, saying it doesn't know what the `api` call is about...
+local sort_by_name = true
+local function sort_by_natural(nodes)
+  local function sorter(left, right)
+    if left.type ~= 'directory' and right.type == 'directory' then
+      return false
+    elseif left.type == 'directory' and right.type ~= 'directory' then
+      return true
+    end
+    left = left.name:lower()
+    right = right.name:lower()
+
+    if left == right then
+      return false
+    end
+
+    for i = 1, math.max(string.len(left), string.len(right)), 1 do
+      local l = string.sub(left, i, -1)
+      local r = string.sub(right, i, -1)
+
+      if type(tonumber(string.sub(l, 1, 1))) == 'number' and type(tonumber(string.sub(r, 1, 1))) == 'number' then
+        local l_number = tonumber(string.match(l, '^[0-9]+'))
+        local r_number = tonumber(string.match(r, '^[0-9]+'))
+
+        if l_number ~= r_number then
+          return l_number < r_number
+        end
+      elseif string.sub(l, 1, 1) ~= string.sub(r, 1, 1) then
+        return l < r
+      end
+    end
+  end
+
+  if sort_by_name then
+    table.sort(nodes, sorter)
+  else
+    return 'modification_time'
+  end
+end
+
+local cycle_sort = function()
+  sort_by_name = not sort_by_name
+  api.tree.reload()
+  if sort_by_name then
+    vim.notify 'Sorting by name'
+  else
+    vim.notify 'Sorting by modification time'
+  end
+end
+
+-- }}}
+
 return {
   -- {
   --   'folke/tokyonight.nvim',
@@ -32,15 +90,15 @@ return {
   {
     'robertmeta/nofrils',
   },
-  {
-    'pbrisbin/vim-colors-off',
-  },
+  -- {
+  --   'pbrisbin/vim-colors-off',
+  -- },
   -- {
   --   'jaredgorski/fogbell.vim',
   -- },
-  {
-    'pgdouyon/vim-yin-yang',
-  },
+  -- {
+  --   'pgdouyon/vim-yin-yang',
+  -- },
   -- {
   --   'cideM/yui',
   -- },
@@ -106,14 +164,14 @@ return {
     'wellle/targets.vim',
     event = 'VeryLazy',
   },
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    config = true,
-    opts = {
-      -- defaults
-    },
-  },
+  -- {
+  --   'windwp/nvim-autopairs',
+  --   event = 'InsertEnter',
+  --   config = true,
+  --   opts = {
+  --     -- defaults
+  --   },
+  -- },
   -- {
   --   'mhinz/vim-startify',
   -- },
@@ -528,6 +586,8 @@ return {
           },
         },
       },
+      sort_by = sort_by_natural,
+      -- vim.keymap.set('n', '<leader>/', cycle_sort),
     },
   },
   {

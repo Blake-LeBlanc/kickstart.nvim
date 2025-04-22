@@ -154,3 +154,6 @@ vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 } }
 
 -- Lazygit
 vim.g.lazygit_floating_window_scaling_factor = 1.0
+
+-- nvim-tree
+keymap.set('n', 'T', cycle_sort, opts 'Cycle Sort')
