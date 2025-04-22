@@ -222,6 +222,7 @@ return {
       require('mini.files').setup {
         opts = {
           vim.keymap.set('n', '-', '<CMD>lua MiniFiles.open()<CR>'),
+          permanent_delete = false,
         },
         -- Customization of shown content
         content = {

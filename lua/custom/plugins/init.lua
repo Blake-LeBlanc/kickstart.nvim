@@ -563,34 +563,34 @@ return {
   --   'brenoprata10/nvim-highlight-colors',
   --   opts = {},
   -- },
-  {
-    'nvim-tree/nvim-tree.lua',
-    -- NOTE: Per author, do not lazyload. Due to how plugin works, nothing would be gained anyway.
-    -- See https://github.com/nvim-tree/nvim-tree.lua/discussions/2298
-    version = '*',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    -- config = function()
-    --   require('nvim-tree').setup {}
-    -- end,
-    opts = {
-      renderer = {
-        icons = {
-          show = {
-            file = false,
-            folder = false,
-            folder_arrow = true,
-            git = true,
-            modified = true,
-            hidden = true,
-          },
-        },
-      },
-      sort_by = sort_by_natural,
-      -- vim.keymap.set('n', '<leader>/', cycle_sort),
-    },
-  },
+  -- {
+  --   'nvim-tree/nvim-tree.lua',
+  --   -- NOTE: Per author, do not lazyload. Due to how plugin works, nothing would be gained anyway.
+  --   -- See https://github.com/nvim-tree/nvim-tree.lua/discussions/2298
+  --   version = '*',
+  --   dependencies = {
+  --     'nvim-tree/nvim-web-devicons',
+  --   },
+  --   -- config = function()
+  --   --   require('nvim-tree').setup {}
+  --   -- end,
+  --   opts = {
+  --     renderer = {
+  --       icons = {
+  --         show = {
+  --           file = false,
+  --           folder = false,
+  --           folder_arrow = true,
+  --           git = true,
+  --           modified = true,
+  --           hidden = true,
+  --         },
+  --       },
+  --     },
+  --     sort_by = sort_by_natural,
+  --     -- vim.keymap.set('n', '<leader>/', cycle_sort),
+  --   },
+  -- },
   {
     'mikavilpas/yazi.nvim',
     event = 'VeryLazy',
