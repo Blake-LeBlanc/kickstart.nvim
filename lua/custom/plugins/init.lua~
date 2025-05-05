@@ -641,37 +641,4 @@ return {
     end,
     opts = {},
   },
-
-  {
-    'folke/zen-mode.nvim',
-    opts = {
-      on_open = function()
-        vim.cmd 'TWEnable'
-      end,
-      on_close = function()
-        vim.cmd 'TWDisable'
-      end,
-    },
-  },
-
-  -- {
-  --   'pocco81/true-zen.nvim',
-  --   config = function()
-  --     require('true-zen').setup {
-  --       modes = {
-  --         ataraxis = {
-  --           callbacks = {
-  --             open_pre = function()
-  --               vim.cmd 'TWEnable'
-  --             end,
-  --             close_pos = function()
-  --               vim.cmd 'TWDisable'
-  --             end,
-  --           },
-  --         },
-  --       },
-  --     }
-  --   end,
-  --   opts = {},
-  -- },
 }
