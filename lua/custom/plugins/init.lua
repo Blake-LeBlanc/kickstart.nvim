@@ -508,6 +508,12 @@ return {
           -- list = false, -- disable whitespace characters
         },
       },
+      on_open = function()
+        vim.cmd 'TWEnable'
+      end,
+      on_close = function()
+        vim.cmd 'TWDisable'
+      end,
     },
   },
   -- {
@@ -533,15 +539,23 @@ return {
   --     },
   --   },
   -- },
-  -- {
-  -- NOTE: Seems to interfere with the quality of macro recordings when specific keypresses are
-  -- involved
-  --   'bullets-vim/bullets.vim',
-  --   -- opts = {},
-  --   config = function()
-  --     require('bullets').setup()
-  --   end,
-  -- },
+  {
+    -- NOTE: Seems to interfere with the quality of macro recordings when specific keypresses are
+    -- involved
+    'bullets-vim/bullets.vim',
+    -- NOTE: Can't seem to get it to work with the "usual" approaches, had to resort to vim.g
+    -- opts = {},
+    -- config = function()
+    --   require('bullets').setup()
+    -- end,
+    init = function()
+      vim.g.bullets_enabled_file_types = {
+        'markdown',
+        'text',
+        'gitcommit',
+      }
+    end,
+  },
   -- {
   --   'sphamba/smear-cursor.nvim',
   --   opts = {
@@ -602,5 +616,29 @@ return {
       },
       floating_window_scaling_factor = 1.0,
     },
+  },
+  {
+    'hedyhli/outline.nvim',
+    lazy = true,
+    cmd = { 'Outline', 'OutlineOpen' },
+    keys = { -- Example mapping to toggle outline
+      { '<leader>o', '<cmd>Outline<CR>', desc = 'Toggle outline' },
+    },
+    opts = {
+      -- Your setup opts here
+    },
+  },
+  {
+    'joshuadanpeterson/typewriter',
+    config = function()
+      require('typewriter').setup {
+        enable_with_zen_mode = true,
+        enable_with_true_zen = true,
+        keep_cursor_position = true,
+        enable_notifications = true,
+        enable_horizontal_scroll = true,
+      }
+    end,
+    opts = {},
   },
 }
