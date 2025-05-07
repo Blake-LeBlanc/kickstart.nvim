@@ -539,23 +539,23 @@ return {
   --     },
   --   },
   -- },
-  {
-    -- NOTE: Seems to interfere with the quality of macro recordings when specific keypresses are
-    -- involved
-    'bullets-vim/bullets.vim',
-    -- NOTE: Can't seem to get it to work with the "usual" approaches, had to resort to vim.g
-    -- opts = {},
-    -- config = function()
-    --   require('bullets').setup()
-    -- end,
-    init = function()
-      vim.g.bullets_enabled_file_types = {
-        'markdown',
-        'text',
-        'gitcommit',
-      }
-    end,
-  },
+  -- {
+  --   -- NOTE: Seems to interfere with the quality of macro recordings when specific keypresses are
+  --   -- involved
+  --   'bullets-vim/bullets.vim',
+  --   -- NOTE: Can't seem to get it to work with the "usual" approaches, had to resort to vim.g
+  --   -- opts = {},
+  --   -- config = function()
+  --   --   require('bullets').setup()
+  --   -- end,
+  --   init = function()
+  --     vim.g.bullets_enabled_file_types = {
+  --       'markdown',
+  --       'text',
+  --       'gitcommit',
+  --     }
+  --   end,
+  -- },
   -- {
   --   'sphamba/smear-cursor.nvim',
   --   opts = {
