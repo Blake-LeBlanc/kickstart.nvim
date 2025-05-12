@@ -275,12 +275,6 @@ if not vim.loop.fs_stat(lazypath) then
   end
 end
 
--- Prepend the lazypath to runtime path
-vim.opt.rtp:prepend(lazypath)
-end ---@diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(lazypath)
-end
-
 ---@type vim.Option
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
