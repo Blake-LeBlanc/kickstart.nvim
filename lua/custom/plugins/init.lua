@@ -637,6 +637,7 @@ return {
         keep_cursor_position = true,
         enable_notifications = true,
         enable_horizontal_scroll = false,
+        start_enabled = true,
       }
     end,
     opts = {},
