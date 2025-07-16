@@ -635,7 +635,7 @@ return {
         enable_with_zen_mode = true,
         enable_with_true_zen = true,
         keep_cursor_position = true,
-        enable_notifications = true,
+        enable_notifications = false,
         enable_horizontal_scroll = false,
         start_enabled = true,
       }
