@@ -605,18 +605,18 @@ return {
   --     -- vim.keymap.set('n', '<leader>/', cycle_sort),
   --   },
   -- },
-  {
-    'mikavilpas/yazi.nvim',
-    event = 'VeryLazy',
-    opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = false,
-      keymaps = {
-        show_help = '<f1>',
-      },
-      floating_window_scaling_factor = 1.0,
-    },
-  },
+  -- {
+  --   'mikavilpas/yazi.nvim',
+  --   event = 'VeryLazy',
+  --   opts = {
+  --     -- if you want to open yazi instead of netrw, see below for more info
+  --     open_for_directories = false,
+  --     keymaps = {
+  --       show_help = '<f1>',
+  --     },
+  --     floating_window_scaling_factor = 1.0,
+  --   },
+  -- },
   {
     'hedyhli/outline.nvim',
     lazy = true,
@@ -628,20 +628,20 @@ return {
       -- Your setup opts here
     },
   },
-  {
-    'joshuadanpeterson/typewriter',
-    config = function()
-      require('typewriter').setup {
-        enable_with_zen_mode = true,
-        enable_with_true_zen = true,
-        keep_cursor_position = true,
-        enable_notifications = false,
-        enable_horizontal_scroll = false,
-        start_enabled = false,
-      }
-    end,
-    opts = {},
-  },
+  -- {
+  --   'joshuadanpeterson/typewriter',
+  --   config = function()
+  --     require('typewriter').setup {
+  --       enable_with_zen_mode = true,
+  --       enable_with_true_zen = true,
+  --       keep_cursor_position = true,
+  --       enable_notifications = false,
+  --       enable_horizontal_scroll = false,
+  --       start_enabled = false,
+  --     }
+  --   end,
+  --   opts = {},
+  -- },
   -- {
   --   'nvzone/typr',
   --   dependencies = 'nvzone/volt',

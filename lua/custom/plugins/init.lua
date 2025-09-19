@@ -276,6 +276,10 @@ return {
     end,
   },
   {
+    'nvim-mini/mini.comment',
+    version = false,
+  },
+  {
     'norcalli/nvim-colorizer.lua',
   },
   -- NOTE: While the below *should* cause a post-install hook to fire in Lazy.nvim to update the fzf
@@ -324,10 +328,10 @@ return {
   --   --   )}
   --   -- end,
   -- },
-  {
-    'numToStr/Comment.nvim',
-    opts = {},
-  },
+  -- {
+  --   'numToStr/Comment.nvim',
+  --   opts = {},
+  -- },
   {
     'sindrets/diffview.nvim',
     event = 'VeryLazy',
