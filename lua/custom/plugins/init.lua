@@ -484,38 +484,38 @@ return {
       { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
-  {
-    'folke/zen-mode.nvim',
-    event = 'VeryLazy',
-    opts = {
-      window = {
-        backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
-        -- height and width can be:
-        -- * an absolute number of cells when > 1
-        -- * a percentage of the width / height of the editor when <= 1
-        -- * a function that returns the width or the height
-        width = 120, -- width of the Zen window
-        height = 1, -- height of the Zen window
-        -- by default, no options are changed for the Zen window
-        -- uncomment any of the options below, or add other vim.wo options you want to apply
-        options = {
-          -- signcolumn = "no", -- disable signcolumn
-          -- number = false, -- disable number column
-          -- relativenumber = false, -- disable relative numbers
-          -- cursorline = false, -- disable cursorline
-          -- cursorcolumn = false, -- disable cursor column
-          -- foldcolumn = "0", -- disable fold column
-          -- list = false, -- disable whitespace characters
-        },
-      },
-      on_open = function()
-        vim.cmd 'TWEnable'
-      end,
-      on_close = function()
-        vim.cmd 'TWDisable'
-      end,
-    },
-  },
+  -- {
+  --   'folke/zen-mode.nvim',
+  --   event = 'VeryLazy',
+  --   opts = {
+  --     window = {
+  --       backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+  --       -- height and width can be:
+  --       -- * an absolute number of cells when > 1
+  --       -- * a percentage of the width / height of the editor when <= 1
+  --       -- * a function that returns the width or the height
+  --       width = 120, -- width of the Zen window
+  --       height = 1, -- height of the Zen window
+  --       -- by default, no options are changed for the Zen window
+  --       -- uncomment any of the options below, or add other vim.wo options you want to apply
+  --       options = {
+  --         -- signcolumn = "no", -- disable signcolumn
+  --         -- number = false, -- disable number column
+  --         -- relativenumber = false, -- disable relative numbers
+  --         -- cursorline = false, -- disable cursorline
+  --         -- cursorcolumn = false, -- disable cursor column
+  --         -- foldcolumn = "0", -- disable fold column
+  --         -- list = false, -- disable whitespace characters
+  --       },
+  --     },
+  --     on_open = function()
+  --       vim.cmd 'TWEnable'
+  --     end,
+  --     on_close = function()
+  --       vim.cmd 'TWDisable'
+  --     end,
+  --   },
+  -- },
   -- {
   --   'neo451/feed.nvim',
   --   dependencies = {
@@ -605,18 +605,18 @@ return {
   --     -- vim.keymap.set('n', '<leader>/', cycle_sort),
   --   },
   -- },
-  {
-    'mikavilpas/yazi.nvim',
-    event = 'VeryLazy',
-    opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = false,
-      keymaps = {
-        show_help = '<f1>',
-      },
-      floating_window_scaling_factor = 1.0,
-    },
-  },
+  -- {
+  --   'mikavilpas/yazi.nvim',
+  --   event = 'VeryLazy',
+  --   opts = {
+  --     -- if you want to open yazi instead of netrw, see below for more info
+  --     open_for_directories = false,
+  --     keymaps = {
+  --       show_help = '<f1>',
+  --     },
+  --     floating_window_scaling_factor = 1.0,
+  --   },
+  -- },
   {
     'hedyhli/outline.nvim',
     lazy = true,
@@ -628,20 +628,20 @@ return {
       -- Your setup opts here
     },
   },
-  {
-    'joshuadanpeterson/typewriter',
-    config = function()
-      require('typewriter').setup {
-        enable_with_zen_mode = true,
-        enable_with_true_zen = true,
-        keep_cursor_position = true,
-        enable_notifications = false,
-        enable_horizontal_scroll = false,
-        start_enabled = false,
-      }
-    end,
-    opts = {},
-  },
+  -- {
+  --   'joshuadanpeterson/typewriter',
+  --   config = function()
+  --     require('typewriter').setup {
+  --       enable_with_zen_mode = true,
+  --       enable_with_true_zen = true,
+  --       keep_cursor_position = true,
+  --       enable_notifications = false,
+  --       enable_horizontal_scroll = false,
+  --       start_enabled = false,
+  --     }
+  --   end,
+  --   opts = {},
+  -- },
   -- {
   --   'nvzone/typr',
   --   dependencies = 'nvzone/volt',
