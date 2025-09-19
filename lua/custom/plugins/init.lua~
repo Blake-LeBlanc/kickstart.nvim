@@ -342,7 +342,7 @@ return {
     'norcalli/nvim-colorizer.lua',
     opts = {},
   },
-  -- { 'junegunn/fzf',
+  -- { 'junegunn/fzf',{{{
   -- NOTE: While the below *should* cause a post-install hook to fire in Lazy.nvim to update the fzf
   -- binary, it may not work. If after install, you're running into weird errors after calling, say,
   -- `:History`, try manually updating the binary with `:call fzf#install()`
@@ -350,10 +350,9 @@ return {
   --   build = './install --all',
   --   -- dir = fzf_dir,
   --   -- build = get_fzf_build_command(),
-  -- },
-  -- {
-  --   'junegunn/fzf.vim',
-  -- },
+  -- },}}}
+  -- { 'junegunn/fzf.vim',{{{
+  -- },}}}
   {
     'ibhagwan/fzf-lua',
     dependencies = {
@@ -376,8 +375,7 @@ return {
       },
     },
   },
-  -- {
-  --   'akinsho/toggleterm.nvim',
+  -- { 'akinsho/toggleterm.nvim',{{{
   --   version = '*',
   --   config = true,
   --
@@ -386,11 +384,10 @@ return {
   --   --     -- defaults
   --   --   )}
   --   -- end,
-  -- },
-  -- {
-  --   'numToStr/Comment.nvim',
+  -- },}}}
+  -- { 'numToStr/Comment.nvim',{{{
   --   opts = {},
-  -- },
+  -- },}}}
   {
     'sindrets/diffview.nvim',
     event = 'VeryLazy',
@@ -449,8 +446,7 @@ return {
       extensions = {},
     },
   },
-  -- {
-  --   'isakbm/gitgraph.nvim',
+  -- { 'isakbm/gitgraph.nvim',{{{
   --   opts = {
   --     symbols = {
   --       merge_commit = 'M',
@@ -486,9 +482,8 @@ return {
   --       desc = 'GitGraph - Draw',
   --     },
   --   },
-  -- },
-  -- {
-  --   'Isrothy/neominimap.nvim',
+  -- },}}}
+  -- { 'Isrothy/neominimap.nvim',{{{
   --   enabled = true,
   --   lazy = false,
   --   init = function()
@@ -499,16 +494,14 @@ return {
   --       auto_enable = true,
   --     }
   --   end,
-  -- },
-  -- {
-  --   'nvim-telescope/telescope-file-browser.nvim',
+  -- },}}}
+  -- { 'nvim-telescope/telescope-file-browser.nvim',{{{
   --   dependencies = {
   --     'nvim-telescope/telescope.nvim',
   --     'nvim-lua/plenary.nvim',
   --   },
-  -- },
-  -- {
-  --   'kylechui/nvim-surround',
+  -- },}}}
+  -- { 'kylechui/nvim-surround',{{{
   --   version = '*', -- Use for stability; omit to use `main` branch for the latest features
   --   event = 'VeryLazy',
   --   config = function()
@@ -516,14 +509,12 @@ return {
   --       -- defaults
   --     }
   --   end,
-  -- },
-  -- {
-  --   'nvim-telesecope/telescope-frecency.nvim',
+  -- },}}}
+  -- { 'nvim-telesecope/telescope-frecency.nvim',{{{
   --   config = function()
   --     require('telescope').load_extension 'frecency'
   --   end,
-  -- },
-
+  -- },}}}
   {
     'kdheepak/lazygit.nvim',
     -- lazy = true,
@@ -545,8 +536,7 @@ return {
       { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
-  -- {
-  --   'folke/zen-mode.nvim',
+  -- { 'folke/zen-mode.nvim',{{{
   --   event = 'VeryLazy',
   --   opts = {
   --     window = {
@@ -576,9 +566,8 @@ return {
   --       vim.cmd 'TWDisable'
   --     end,
   --   },
-  -- },
-  -- {
-  --   'neo451/feed.nvim',
+  -- },}}}
+  -- { 'neo451/feed.nvim',{{{
   --   dependencies = {
   --     'neo451/treedoc.nvim',
   --     'stevearc/conform.nvim',
@@ -599,11 +588,10 @@ return {
   --       },
   --     },
   --   },
-  -- },
-  -- {
+  -- },}}}
+  -- { 'bullets-vim/bullets.vim',{{{
   --   -- NOTE: Seems to interfere with the quality of macro recordings when specific keypresses are
   --   -- involved
-  --   'bullets-vim/bullets.vim',
   --   -- NOTE: Can't seem to get it to work with the "usual" approaches, had to resort to vim.g
   --   -- opts = {},
   --   -- config = function()
@@ -616,30 +604,26 @@ return {
   --       'gitcommit',
   --     }
   --   end,
-  -- },
-  -- {
-  --   'sphamba/smear-cursor.nvim',
+  -- },}}}
+  -- { 'sphamba/smear-cursor.nvim',{{{
   --   opts = {
   --     legacy_computing_symbols_support = false,
   --     -- cursor_color = '#09FDFF',
   --     cursor_color = '#2C3336',
   --   },
-  -- },
-  -- {
-  --   'karb94/neoscroll.nvim',
+  -- },}}}
+  -- { 'karb94/neoscroll.nvim',{{{
   --   opts = {
   --     -- easing = 'quadratic',
   --     -- easing = 'sine',
   --     -- easing = 'quartic',
   --     easing = 'quintic',
   --   },
-  -- },
-  -- {
-  --   'brenoprata10/nvim-highlight-colors',
+  -- },}}}
+  -- { 'brenoprata10/nvim-highlight-colors',{{{
   --   opts = {},
-  -- },
-  -- {
-  --   'nvim-tree/nvim-tree.lua',
+  -- },}}}
+  -- { 'nvim-tree/nvim-tree.lua',{{{
   --   -- NOTE: Per author, do not lazyload. Due to how plugin works, nothing would be gained anyway.
   --   -- See https://github.com/nvim-tree/nvim-tree.lua/discussions/2298
   --   version = '*',
@@ -665,9 +649,8 @@ return {
   --     sort_by = sort_by_natural,
   --     -- vim.keymap.set('n', '<leader>/', cycle_sort),
   --   },
-  -- },
-  -- {
-  --   'mikavilpas/yazi.nvim',
+  -- },}}}
+  -- { 'mikavilpas/yazi.nvim',{{{
   --   event = 'VeryLazy',
   --   opts = {
   --     -- if you want to open yazi instead of netrw, see below for more info
@@ -677,7 +660,7 @@ return {
   --     },
   --     floating_window_scaling_factor = 1.0,
   --   },
-  -- },
+  -- },}}}
   {
     'hedyhli/outline.nvim',
     lazy = true,
@@ -689,8 +672,7 @@ return {
       -- Your setup opts here
     },
   },
-  -- {
-  --   'joshuadanpeterson/typewriter',
+  -- { 'joshuadanpeterson/typewriter',{{{
   --   config = function()
   --     require('typewriter').setup {
   --       enable_with_zen_mode = true,
@@ -702,15 +684,13 @@ return {
   --     }
   --   end,
   --   opts = {},
-  -- },
-  -- {
-  --   'nvzone/typr',
+  -- },}}}
+  -- { 'nvzone/typr',{{{
   --   dependencies = 'nvzone/volt',
   --   opts = {},
   --   cmd = { 'Typr', 'TyprStats' },
-  -- },
-  -- {
-  --   'alex-popov-tech/store.nvim',
+  -- },}}}
+  -- { 'alex-popov-tech/store.nvim',{{{
   --   dependencies = {
   --     'OXY2DEV/markview.nvim',
   --   },
@@ -750,5 +730,5 @@ return {
   --   end,
   --   cmd = 'Store',
   --   opts = {},
-  -- },
+  -- },}}}
 }

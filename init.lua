@@ -92,6 +92,8 @@ else
   vim.g.python3_host_prog = user_profile .. '/.pyenv/verisons/3.13.1/bin/python3'
 end
 
+vim.opt.termguicolors = true
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)

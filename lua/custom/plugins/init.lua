@@ -157,13 +157,13 @@ return {
   {
     'markonm/traces.vim',
     event = 'VeryLazy',
-    opts = {},
+    -- opts = {},
   },
   {
     -- The main reason I use this is because it allows for bi-directional searching near cursor position
     'wellle/targets.vim',
     event = 'VeryLazy',
-    opts = {},
+    -- opts = {},
   },
   -- { 'windwp/nvim-autopairs',{{{
   --   event = 'InsertEnter',
