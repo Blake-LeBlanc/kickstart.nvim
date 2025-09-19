@@ -79,6 +79,7 @@ end
 -- }}}
 
 return {
+  -- colorschemes{{{
   -- {
   --   'folke/tokyonight.nvim',
   -- },
@@ -105,12 +106,10 @@ return {
   -- {
   --   'vim-scripts/zenesque.vim',
   -- },
-
-  -- {
-  --   'rktjmp/lush.nvim',
-  -- },
-  -- {
-  --   'ggandor/leap.nvim',
+  -- }}}
+  -- { 'rktjmp/lush.nvim',{{{
+  -- },}}}
+  -- { 'ggandor/leap.nvim',{{{
   --   config = function()
   --     require('leap').create_default_mappings()
   --     -- NOTE: Whenever I used the above, not only did it cause nvim to complain about a clash with
@@ -120,7 +119,7 @@ return {
   --     vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
   --     vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
   --   end,
-  -- },
+  -- },}}}
   {
     'folke/flash.nvim',
     event = 'VeryLazy',
@@ -158,25 +157,24 @@ return {
   {
     'markonm/traces.vim',
     event = 'VeryLazy',
+    opts = {},
   },
   {
     -- The main reason I use this is because it allows for bi-directional searching near cursor position
     'wellle/targets.vim',
     event = 'VeryLazy',
+    opts = {},
   },
-  -- {
-  --   'windwp/nvim-autopairs',
+  -- { 'windwp/nvim-autopairs',{{{
   --   event = 'InsertEnter',
   --   config = true,
   --   opts = {
   --     -- defaults
   --   },
-  -- },
-  -- {
-  --   'mhinz/vim-startify',
-  -- },
-  -- {
-  --   'goolord/alpha-nvim',
+  -- },}}}
+  -- { 'mhinz/vim-startify',{{{
+  -- },}}}
+  -- { 'goolord/alpha-nvim',{{{
   --   -- dependencies = { 'echasnovski/mini.icons' },
   --   dependencies = { 'nvim-tree/nvim-web-devicons' },
   --   config = function()
@@ -186,9 +184,8 @@ return {
   --     startify.file_icons.provider = 'devicons'
   --     require('alpha').setup(startify.config)
   --   end,
-  -- },
-  -- {
-  --   'echasnovski/mini.map',
+  -- },}}}
+  -- { 'echasnovski/mini.map',{{{
   --   version = '*',
   --   config = function()
   --     require('mini.map').setup {
@@ -213,154 +210,149 @@ return {
   --       },
   --     }
   --   end,
-  -- },
+  -- },}}}
   {
     'echasnovski/mini.files',
     event = 'VeryLazy',
     version = '*',
-    config = function()
-      require('mini.files').setup {
-        opts = {
-          vim.keymap.set('n', '-', '<CMD>lua MiniFiles.open()<CR>'),
-          permanent_delete = false,
-        },
-        -- Customization of shown content
-        content = {
-          -- Predicate for which file system entries to show
-          filter = nil,
-          -- What prefix to show to the left of file system entry
-          prefix = nil,
-          -- In which order to show file system entries
-          sort = nil,
-        },
+    -- FIXME: Replace with opts structure, will involve moving some things around in/out of
+    --     the opts block --for example, can the keymap stuff go to an outer keys block like
+    --     you've used elsewhere?
+    opts = {
+      -- Customization of shown content
+      content = {
+        -- Predicate for which file system entries to show
+        filter = nil,
+        -- What prefix to show to the left of file system entry
+        prefix = nil,
+        -- In which order to show file system entries
+        sort = nil,
+      },
 
-        -- Module mappings created only inside explorer.
-        -- Use `''` (empty string) to not create one.
-        mappings = {
-          close = 'q',
-          go_in = 'l',
-          go_in_plus = 'L',
-          -- go_out      = 'h',
-          go_out = '-',
-          go_out_plus = 'H',
-          reset = '<BS>',
-          reveal_cwd = '@',
-          show_help = 'g?',
-          synchronize = '=',
-          trim_left = '<',
-          trim_right = '>',
-        },
+      -- Module mappings created only inside explorer.
+      -- Use `''` (empty string) to not create one.
+      mappings = {
+        close = 'q',
+        go_in = 'l',
+        go_in_plus = 'L',
+        -- go_out      = 'h',
+        go_out = '-',
+        go_out_plus = 'H',
+        reset = '<BS>',
+        reveal_cwd = '@',
+        show_help = 'g?',
+        synchronize = '=',
+        trim_left = '<',
+        trim_right = '>',
+      },
 
-        -- General options
-        options = {
-          -- Whether to delete permanently or move into module-specific trash
-          permanent_delete = false,
-          -- Whether to use for editing directories
-          use_as_default_explorer = true,
-        },
+      -- General options
+      options = {
+        -- Whether to delete permanently or move into module-specific trash
+        permanent_delete = false,
+        -- Whether to use for editing directories
+        use_as_default_explorer = true,
+      },
 
-        -- Customization of explorer windows
-        windows = {
-          -- Maximum number of windows to show side by side
-          max_number = math.huge,
-          -- Whether to show preview of file/directory under cursor
-          preview = true,
-          -- Width of focused window
-          width_focus = 50,
-          -- Width of non-focused window
-          width_nofocus = 15,
-          -- Width of preview window
-          width_preview = 50,
-        },
-      }
-    end,
+      -- Customization of explorer windows
+      windows = {
+        -- Maximum number of windows to show side by side
+        max_number = math.huge,
+        -- Whether to show preview of file/directory under cursor
+        preview = true,
+        -- Width of focused window
+        width_focus = 50,
+        -- Width of non-focused window
+        width_nofocus = 15,
+        -- Width of preview window
+        width_preview = 50,
+      },
+    },
+    keys = {
+      vim.keymap.set('n', '-', '<CMD>lua MiniFiles.open()<CR>'),
+    },
   },
   {
     'nvim-mini/mini.comment',
     version = false,
-    config = function()
-      require('mini.comment').setup {
-        -- Module mappings. Use `''` (empty string) to disable one.
-        mappings = {
-          -- Toggle comment (like `gcip` - comment inner paragraph) for both
-          -- Normal and Visual modes
-          comment = 'gc',
+    opts = {
+      -- Module mappings. Use `''` (empty string) to disable one.
+      mappings = {
+        -- Toggle comment (like `gcip` - comment inner paragraph) for both
+        -- Normal and Visual modes
+        comment = 'gc',
 
-          -- Toggle comment on current line
-          comment_line = 'gcc',
+        -- Toggle comment on current line
+        comment_line = 'gcc',
 
-          -- Toggle comment on visual selection
-          comment_visual = 'gc',
+        -- Toggle comment on visual selection
+        comment_visual = 'gc',
 
-          -- Define 'comment' textobject (like `dgc` - delete whole comment block)
-          -- Works also in Visual mode if mapping differs from `comment_visual`
-          textobject = 'gc',
-        },
-      }
-    end,
+        -- Define 'comment' textobject (like `dgc` - delete whole comment block)
+        -- Works also in Visual mode if mapping differs from `comment_visual`
+        textobject = 'gc',
+      },
+    },
   },
   {
     'nvim-mini/mini.surround',
     version = false,
-    config = function()
-      require('mini.surround').setup {
-        -- Add custom surroundings to be used on top of builtin ones. For more
-        -- information with examples, see `:h MiniSurround.config`.
-        custom_surroundings = nil,
+    opts = {
+      -- Add custom surroundings to be used on top of builtin ones. For more
+      -- information with examples, see `:h MiniSurround.config`.
+      custom_surroundings = nil,
 
-        -- Duration (in ms) of highlight when calling `MiniSurround.highlight()`
-        highlight_duration = 500,
+      -- Duration (in ms) of highlight when calling `MiniSurround.highlight()`
+      highlight_duration = 500,
 
-        -- Module mappings. Use `''` (empty string) to disable one.
-        mappings = {
-          add = 'sa', -- Add surrounding in Normal and Visual modes
-          delete = 'sd', -- Delete surrounding
-          find = 'sf', -- Find surrounding (to the right)
-          find_left = 'sF', -- Find surrounding (to the left)
-          highlight = 'sh', -- Highlight surrounding
-          replace = 'sr', -- Replace surrounding
+      -- Module mappings. Use `''` (empty string) to disable one.
+      mappings = {
+        add = 'sa', -- Add surrounding in Normal and Visual modes
+        delete = 'sd', -- Delete surrounding
+        find = 'sf', -- Find surrounding (to the right)
+        find_left = 'sF', -- Find surrounding (to the left)
+        highlight = 'sh', -- Highlight surrounding
+        replace = 'sr', -- Replace surrounding
 
-          suffix_last = 'l', -- Suffix to search with "prev" method
-          suffix_next = 'n', -- Suffix to search with "next" method
-        },
+        suffix_last = 'l', -- Suffix to search with "prev" method
+        suffix_next = 'n', -- Suffix to search with "next" method
+      },
 
-        -- Number of lines within which surrounding is searched
-        n_lines = 20,
+      -- Number of lines within which surrounding is searched
+      n_lines = 20,
 
-        -- Whether to respect selection type:
-        -- - Place surroundings on separate lines in linewise mode.
-        -- - Place surroundings on each line in blockwise mode.
-        respect_selection_type = false,
+      -- Whether to respect selection type:
+      -- - Place surroundings on separate lines in linewise mode.
+      -- - Place surroundings on each line in blockwise mode.
+      respect_selection_type = false,
 
-        -- How to search for surrounding (first inside current line, then inside
-        -- neighborhood). One of 'cover', 'cover_or_next', 'cover_or_prev',
-        -- 'cover_or_nearest', 'next', 'prev', 'nearest'. For more details,
-        -- see `:h MiniSurround.config`.
-        search_method = 'cover',
+      -- How to search for surrounding (first inside current line, then inside
+      -- neighborhood). One of 'cover', 'cover_or_next', 'cover_or_prev',
+      -- 'cover_or_nearest', 'next', 'prev', 'nearest'. For more details,
+      -- see `:h MiniSurround.config`.
+      search_method = 'cover',
 
-        -- Whether to disable showing non-error feedback
-        -- This also affects (purely informational) helper messages shown after
-        -- idle time if user input is required.
-        silent = false,
-      }
-    end,
+      -- Whether to disable showing non-error feedback
+      -- This also affects (purely informational) helper messages shown after
+      -- idle time if user input is required.
+      silent = false,
+    },
   },
   {
     'norcalli/nvim-colorizer.lua',
+    opts = {},
   },
+  -- { 'junegunn/fzf',{{{
   -- NOTE: While the below *should* cause a post-install hook to fire in Lazy.nvim to update the fzf
   -- binary, it may not work. If after install, you're running into weird errors after calling, say,
   -- `:History`, try manually updating the binary with `:call fzf#install()`
-  -- {
-  --   'junegunn/fzf',
   --   dir = '~/.fzf',
   --   build = './install --all',
   --   -- dir = fzf_dir,
   --   -- build = get_fzf_build_command(),
-  -- },
-  -- {
-  --   'junegunn/fzf.vim',
-  -- },
+  -- },}}}
+  -- { 'junegunn/fzf.vim',{{{
+  -- },}}}
   {
     'ibhagwan/fzf-lua',
     dependencies = {
@@ -383,8 +375,7 @@ return {
       },
     },
   },
-  -- {
-  --   'akinsho/toggleterm.nvim',
+  -- { 'akinsho/toggleterm.nvim',{{{
   --   version = '*',
   --   config = true,
   --
@@ -393,11 +384,10 @@ return {
   --   --     -- defaults
   --   --   )}
   --   -- end,
-  -- },
-  -- {
-  --   'numToStr/Comment.nvim',
+  -- },}}}
+  -- { 'numToStr/Comment.nvim',{{{
   --   opts = {},
-  -- },
+  -- },}}}
   {
     'sindrets/diffview.nvim',
     event = 'VeryLazy',
@@ -405,61 +395,58 @@ return {
   },
   {
     'nvim-lualine/lualine.nvim',
-    config = function()
-      require('lualine').setup {
-        options = {
-          icons_enabled = false,
-          -- theme = "material",
-          -- theme = 'onelight',
-          theme = 'powerline',
-          -- theme = 'base16',
-          component_separators = { left = '', right = '' },
-          section_separators = { left = '', right = '' },
-          disabled_filetypes = {
-            statusline = {},
-            winbar = {},
-            'neo-tree',
-            'NvimTree',
-          },
-          ignore_focus = {},
-          always_divide_middle = true,
-          globalstatus = false,
-          refresh = {
-            statusline = 1000,
-            tabline = 1000,
-            winbar = 1000,
-          },
+    opts = {
+      options = {
+        icons_enabled = false,
+        -- theme = "material",
+        -- theme = 'onelight',
+        theme = 'powerline',
+        -- theme = 'base16',
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+        disabled_filetypes = {
+          statusline = {},
+          winbar = {},
+          'neo-tree',
+          'NvimTree',
         },
-        sections = {
-          lualine_a = { 'mode' },
-          -- How to disable  text coloring for diff and diagnostics? `colored = false`
-          lualine_b = {
-            'branch',
-            'diff',
-            'diagnostics',
-          },
-          lualine_c = { 'filename' },
-          lualine_x = { 'encoding', 'fileformat', 'filetype' },
-          lualine_y = { 'progress' },
-          lualine_z = { 'location' },
+        ignore_focus = {},
+        always_divide_middle = true,
+        globalstatus = false,
+        refresh = {
+          statusline = 1000,
+          tabline = 1000,
+          winbar = 1000,
         },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = { 'filename' },
-          lualine_x = { 'location' },
-          lualine_y = {},
-          lualine_z = {},
+      },
+      sections = {
+        lualine_a = { 'mode' },
+        -- How to disable  text coloring for diff and diagnostics? `colored = false`
+        lualine_b = {
+          'branch',
+          'diff',
+          'diagnostics',
         },
-        tabline = {},
-        winbar = {},
-        inactive_winbar = {},
-        extensions = {},
-      }
-    end,
+        lualine_c = { 'filename' },
+        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' },
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {},
+      },
+      tabline = {},
+      winbar = {},
+      inactive_winbar = {},
+      extensions = {},
+    },
   },
-  -- {
-  --   'isakbm/gitgraph.nvim',
+  -- { 'isakbm/gitgraph.nvim',{{{
   --   opts = {
   --     symbols = {
   --       merge_commit = 'M',
@@ -495,9 +482,8 @@ return {
   --       desc = 'GitGraph - Draw',
   --     },
   --   },
-  -- },
-  -- {
-  --   'Isrothy/neominimap.nvim',
+  -- },}}}
+  -- { 'Isrothy/neominimap.nvim',{{{
   --   enabled = true,
   --   lazy = false,
   --   init = function()
@@ -508,16 +494,14 @@ return {
   --       auto_enable = true,
   --     }
   --   end,
-  -- },
-  -- {
-  --   'nvim-telescope/telescope-file-browser.nvim',
+  -- },}}}
+  -- { 'nvim-telescope/telescope-file-browser.nvim',{{{
   --   dependencies = {
   --     'nvim-telescope/telescope.nvim',
   --     'nvim-lua/plenary.nvim',
   --   },
-  -- },
-  -- {
-  --   'kylechui/nvim-surround',
+  -- },}}}
+  -- { 'kylechui/nvim-surround',{{{
   --   version = '*', -- Use for stability; omit to use `main` branch for the latest features
   --   event = 'VeryLazy',
   --   config = function()
@@ -525,14 +509,12 @@ return {
   --       -- defaults
   --     }
   --   end,
-  -- },
-  -- {
-  --   'nvim-telesecope/telescope-frecency.nvim',
+  -- },}}}
+  -- { 'nvim-telesecope/telescope-frecency.nvim',{{{
   --   config = function()
   --     require('telescope').load_extension 'frecency'
   --   end,
-  -- },
-
+  -- },}}}
   {
     'kdheepak/lazygit.nvim',
     -- lazy = true,
@@ -554,8 +536,7 @@ return {
       { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
-  -- {
-  --   'folke/zen-mode.nvim',
+  -- { 'folke/zen-mode.nvim',{{{
   --   event = 'VeryLazy',
   --   opts = {
   --     window = {
@@ -585,9 +566,8 @@ return {
   --       vim.cmd 'TWDisable'
   --     end,
   --   },
-  -- },
-  -- {
-  --   'neo451/feed.nvim',
+  -- },}}}
+  -- { 'neo451/feed.nvim',{{{
   --   dependencies = {
   --     'neo451/treedoc.nvim',
   --     'stevearc/conform.nvim',
@@ -608,11 +588,10 @@ return {
   --       },
   --     },
   --   },
-  -- },
-  -- {
+  -- },}}}
+  -- { 'bullets-vim/bullets.vim',{{{
   --   -- NOTE: Seems to interfere with the quality of macro recordings when specific keypresses are
   --   -- involved
-  --   'bullets-vim/bullets.vim',
   --   -- NOTE: Can't seem to get it to work with the "usual" approaches, had to resort to vim.g
   --   -- opts = {},
   --   -- config = function()
@@ -625,30 +604,26 @@ return {
   --       'gitcommit',
   --     }
   --   end,
-  -- },
-  -- {
-  --   'sphamba/smear-cursor.nvim',
+  -- },}}}
+  -- { 'sphamba/smear-cursor.nvim',{{{
   --   opts = {
   --     legacy_computing_symbols_support = false,
   --     -- cursor_color = '#09FDFF',
   --     cursor_color = '#2C3336',
   --   },
-  -- },
-  -- {
-  --   'karb94/neoscroll.nvim',
+  -- },}}}
+  -- { 'karb94/neoscroll.nvim',{{{
   --   opts = {
   --     -- easing = 'quadratic',
   --     -- easing = 'sine',
   --     -- easing = 'quartic',
   --     easing = 'quintic',
   --   },
-  -- },
-  -- {
-  --   'brenoprata10/nvim-highlight-colors',
+  -- },}}}
+  -- { 'brenoprata10/nvim-highlight-colors',{{{
   --   opts = {},
-  -- },
-  -- {
-  --   'nvim-tree/nvim-tree.lua',
+  -- },}}}
+  -- { 'nvim-tree/nvim-tree.lua',{{{
   --   -- NOTE: Per author, do not lazyload. Due to how plugin works, nothing would be gained anyway.
   --   -- See https://github.com/nvim-tree/nvim-tree.lua/discussions/2298
   --   version = '*',
@@ -674,9 +649,8 @@ return {
   --     sort_by = sort_by_natural,
   --     -- vim.keymap.set('n', '<leader>/', cycle_sort),
   --   },
-  -- },
-  -- {
-  --   'mikavilpas/yazi.nvim',
+  -- },}}}
+  -- { 'mikavilpas/yazi.nvim',{{{
   --   event = 'VeryLazy',
   --   opts = {
   --     -- if you want to open yazi instead of netrw, see below for more info
@@ -686,7 +660,7 @@ return {
   --     },
   --     floating_window_scaling_factor = 1.0,
   --   },
-  -- },
+  -- },}}}
   {
     'hedyhli/outline.nvim',
     lazy = true,
@@ -698,8 +672,7 @@ return {
       -- Your setup opts here
     },
   },
-  -- {
-  --   'joshuadanpeterson/typewriter',
+  -- { 'joshuadanpeterson/typewriter',{{{
   --   config = function()
   --     require('typewriter').setup {
   --       enable_with_zen_mode = true,
@@ -711,15 +684,13 @@ return {
   --     }
   --   end,
   --   opts = {},
-  -- },
-  -- {
-  --   'nvzone/typr',
+  -- },}}}
+  -- { 'nvzone/typr',{{{
   --   dependencies = 'nvzone/volt',
   --   opts = {},
   --   cmd = { 'Typr', 'TyprStats' },
-  -- },
-  -- {
-  --   'alex-popov-tech/store.nvim',
+  -- },}}}
+  -- { 'alex-popov-tech/store.nvim',{{{
   --   dependencies = {
   --     'OXY2DEV/markview.nvim',
   --   },
@@ -759,5 +730,5 @@ return {
   --   end,
   --   cmd = 'Store',
   --   opts = {},
-  -- },
+  -- },}}}
 }
