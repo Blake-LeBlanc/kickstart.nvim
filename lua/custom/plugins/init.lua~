@@ -3,22 +3,22 @@
 --
 -- See the kickstart.nvim README for more information
 
-local function is_windows()
-  return package.config:sub(1, 1) == '\\'
-end
-
-local function get_fzf_build_command()
-  if is_windows() then
-    return nil
-  else
-    return './install --all'
-  end
-end
-
-local fzf_dir = is_windows() and vim.fn.expand '~\\fzf' or vim.fn.expand '~/.fzf'
-local fzf_executable_path = is_windows()
-    and 'C:\\Users\\blake.leblanc\\AppData\\Local\\Microsoft\\WinGet\\Packages\\junegunn.fzf_Microsoft.Winget.Source_8wekyb3d8bbwe\\fzf.exe'
-  or 'fzf'
+-- local function is_windows()
+--   return package.config:sub(1, 1) == '\\'
+-- end
+--
+-- local function get_fzf_build_command()
+--   if is_windows() then
+--     return nil
+--   else
+--     return './install --all'
+--   end
+-- end
+--
+-- local fzf_dir = is_windows() and vim.fn.expand '~\\fzf' or vim.fn.expand '~/.fzf'
+-- local fzf_executable_path = is_windows()
+--     and 'C:\\Users\\blake.leblanc\\AppData\\Local\\Microsoft\\WinGet\\Packages\\junegunn.fzf_Microsoft.Winget.Source_8wekyb3d8bbwe\\fzf.exe'
+--   or 'fzf'
 
 -- custom commands for nvim-tree.lua{{{
 -- https://github.com/nvim-tree/nvim-tree.lua/discussions/1896#discussioncomment-6828472
@@ -338,6 +338,12 @@ return {
       silent = false,
     },
   },
+  {
+    'nvim-mini/mini.ai',
+    version = false,
+    opts = {},
+  },
+
   {
     'norcalli/nvim-colorizer.lua',
     opts = {},
