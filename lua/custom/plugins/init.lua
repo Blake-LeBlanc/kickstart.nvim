@@ -393,11 +393,14 @@ return {
   -- { 'numToStr/Comment.nvim',{{{
   --   opts = {},
   -- },}}}
-  {
-    'sindrets/diffview.nvim',
-    event = 'VeryLazy',
-    opts = {},
-  },
+  -- { 'sindrets/diffview.nvim',{{{
+  -- -- NOTE: Seems to be a pretty cool plugin for side by side diff views. Though, honestly, now that
+  -- --     I'm familiar with the default vim diff viewer, I don't really see too much of a point right
+  -- --     now. That, and it doesn't seem to play well with the nofrils colorscheme, the color banding
+  -- --     is not present
+  --   event = 'VeryLazy',
+  --   opts = {},
+  -- },}}}
   {
     'nvim-lualine/lualine.nvim',
     opts = {
