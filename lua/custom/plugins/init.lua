@@ -215,9 +215,6 @@ return {
     'echasnovski/mini.files',
     event = 'VeryLazy',
     version = '*',
-    -- FIXME: Replace with opts structure, will involve moving some things around in/out of
-    --     the opts block --for example, can the keymap stuff go to an outer keys block like
-    --     you've used elsewhere?
     opts = {
       -- Customization of shown content
       content = {

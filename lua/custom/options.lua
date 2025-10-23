@@ -69,11 +69,6 @@ opt.writebackup = true
 -- augroup END
 -- ]]
 
--- NOTE: Replaced with opt setting above
-vim.cmd [[
-  autocmd FileType * set formatoptions=tcrqn1jp
-]]
-
 -- Key mappings
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
@@ -98,10 +93,8 @@ keymap('n', '<leader>D', ':cd %:p:h<CR>', opts)
 
 -- NOTE: Something seems to be hijacking the default n A command, resetting here
 keymap('n', 'A', 'A', opts)
-keymap('n', '<leader>z', ':ZenMode<CR>', opts)
 -- keymap('n', '<leader>nt', ':Neotree toggle left reveal_force_cwd<CR><C-w>=', opts)
 keymap('n', '<leader>nt', ':Neotree toggle current reveal_force_cwd<CR>', opts)
--- keymap('n', '<leader>nt', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>cd', ':cd %:p:h<CR>', opts)
 
 -- :FZF related commands
@@ -140,7 +133,7 @@ keymap('n', '<leader>y', ':Yazi<CR>', opts)
 keymap('n', '<leader>cw', ':Yazi cwd<CR>', opts)
 
 -- Zenmode
-keymap('n', '<leader>z', ':ZenMode<CR>', opts)
+-- keymap('n', '<leader>z', ':ZenMode<CR>', opts)
 
 -- Global variables
 vim.g.startify_custom_header = {}
@@ -160,3 +153,4 @@ vim.g.lazygit_floating_window_scaling_factor = 1.0
 
 -- nvim-tree
 -- keymap.('n', 'T', cycle_sort, opts 'Cycle Sort')
+-- keymap('n', '<leader>nt', ':NvimTreeToggle<CR>', opts)
