@@ -30,6 +30,7 @@ opt.matchtime = 1
 opt.modeline = false
 opt.mouse = 'a'
 opt.number = true
+opt.conceallevel = 1
 opt.relativenumber = true
 opt.report = 0
 opt.scrolloff = 7
