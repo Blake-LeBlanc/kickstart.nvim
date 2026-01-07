@@ -381,6 +381,9 @@ return {
           hidden = true,
         },
       },
+      files = {
+        no_ignore = true,
+      },
     },
   },
   -- { 'akinsho/toggleterm.nvim',{{{
