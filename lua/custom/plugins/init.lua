@@ -222,7 +222,6 @@ return {
     event = 'VeryLazy',
     version = '*',
     opts = {
-      -- Customization of shown content
       content = {
         -- Predicate for which file system entries to show
         filter = nil,
@@ -237,19 +236,17 @@ return {
       mappings = {
         close = 'q',
         go_in = 'l',
-        go_in_plus = 'L',
-        -- go_out      = 'h',
-        go_out = '-',
+        go_in_plus = '<CR>', --default L
+        go_out = 'h',
         go_out_plus = 'H',
         reset = '<BS>',
         reveal_cwd = '@',
         show_help = 'g?',
-        synchronize = '=',
+        synchronize = 'w', --default =
         trim_left = '<',
         trim_right = '>',
       },
 
-      -- General options
       options = {
         -- Whether to delete permanently or move into module-specific trash
         permanent_delete = false,
@@ -257,23 +254,54 @@ return {
         use_as_default_explorer = true,
       },
 
-      -- Customization of explorer windows
       windows = {
-        -- Maximum number of windows to show side by side
         max_number = math.huge,
-        -- Whether to show preview of file/directory under cursor
         preview = true,
-        -- Width of focused window
         width_focus = 50,
-        -- Width of non-focused window
         width_nofocus = 15,
-        -- Width of preview window
         width_preview = 50,
       },
     },
     keys = {
       vim.keymap.set('n', '-', '<CMD>lua MiniFiles.open()<CR>'),
     },
+    config = function(_, opts)
+      -- taken from:
+      -- https://www.reddit.com/r/neovim/comments/1bceiw2/oilnvim_vs_minifiles/kuhmdp9/
+      require('mini.files').setup(opts)
+
+      local show_dotfiles = true
+
+      local filter_show = function(fs_entry)
+        return true
+      end
+
+      local filter_hide = function(fs_entry)
+        return not vim.startswith(fs_entry.name, '.')
+      end
+
+      local gio_open = function()
+        local fs_entry = require('mini.files').get_fs_entry()
+        vim.notify(vim.inspect(fs_entry))
+        vim.fn.system(string.format("gio open '%s'", fs_entry.path))
+      end
+
+      local toggle_dotfiles = function()
+        show_dotfiles = not show_dotfiles
+        local new_filter = show_dotfiles and filter_show or filter_hide
+        require('mini.files').refresh { content = { filter = new_filter } }
+      end
+
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'MiniFilesBufferCreate',
+        callback = function(args)
+          local buf_id = args.data.buf_id
+          vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
+          vim.keymap.set('n', '-', require('mini.files').close, { buffer = buf_id })
+          vim.keymap.set('n', 'o', gio_open, { buffer = buf_id })
+        end,
+      })
+    end,
   },
   {
     'nvim-mini/mini.comment',
