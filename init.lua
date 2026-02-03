@@ -608,6 +608,14 @@ require('lazy').setup({
             vim.lsp.codelens.refresh { bufnr = event.buf }
           end
 
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
+          if client and client.name == 'markdown_oxide' then
+            vim.api.nvim_create_user_command('Daily', function(args)
+              local input = args.args
+              vim.lsp.buf.execute_command { command = 'jump', arguments = { input } }
+            end, { desc = 'Open daily note', nargs = '*' })
+          end
+
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
           map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
