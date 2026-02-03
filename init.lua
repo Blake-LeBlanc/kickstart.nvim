@@ -908,9 +908,17 @@ require('lazy').setup({
           'path',
           -- 'snippets',
           'lazydev',
+          -- 'buffer',
         },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          lsp = {
+            opts = {
+              markdown_oxide = {
+                keyword_pattern = [[\(\k\| \|\/\|#\)\+]],
+              },
+            },
+          },
         },
       },
 
