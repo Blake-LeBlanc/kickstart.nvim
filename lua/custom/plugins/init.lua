@@ -178,8 +178,7 @@ return {
   --     -- defaults
   --   },
   -- },}}}
-  -- { 'mhinz/vim-startify',{{{
-  -- },}}}
+  { 'mhinz/vim-startify' },
   -- { 'goolord/alpha-nvim',{{{
   --   -- dependencies = { 'echasnovski/mini.icons' },
   --   dependencies = { 'nvim-tree/nvim-web-devicons' },
