@@ -412,6 +412,9 @@ return {
       files = {
         no_ignore = true,
       },
+      grep = {
+        rg_opts = '--column --line-number --no-heading --color=always --smart-case -g "!*.*~" -g "!*.swp"',
+      },
     },
   },
   -- { 'akinsho/toggleterm.nvim',{{{
