@@ -178,7 +178,7 @@ return {
   --     -- defaults
   --   },
   -- },}}}
-  { 'mhinz/vim-startify' },
+  -- { 'mhinz/vim-startify' },
   -- { 'goolord/alpha-nvim',{{{
   --   -- dependencies = { 'echasnovski/mini.icons' },
   --   dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -820,4 +820,8 @@ return {
   --     map('n', '<leader>ntp', ':NeovimTipsPdf<CR>', { desc = 'Open Neovim tips PDF', noremap = true, silent = true })
   --   end,
   -- },
+  {
+    'airblade/vim-rooter',
+    opts = {},
+  },
 }
