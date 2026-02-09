@@ -836,7 +836,7 @@ return {
     opts = {
       provider = 'ollama',
       use_absolute_path = true,
-      proviers = {
+      providers = {
         ---@type AvanteProvider
         ollama = {
           ['local'] = true,
