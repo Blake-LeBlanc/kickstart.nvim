@@ -823,9 +823,9 @@ return {
   {
     'airblade/vim-rooter',
     -- opts = {},
-    -- config = function()
-    --   require('vim-rooter').setup {}
-    -- end,
+    config = function()
+      -- require('vim-rooter').setup {}
+    end,
   },
 
   {
