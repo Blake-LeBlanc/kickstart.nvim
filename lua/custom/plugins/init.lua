@@ -849,4 +849,11 @@ return {
       { '<leader>ng', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
     },
   },
+  {
+    'tpope/vim-fugitive',
+    -- opts = {},
+    config = function()
+      -- require('vim-fugitive').setup {}
+    end,
+  },
 }
