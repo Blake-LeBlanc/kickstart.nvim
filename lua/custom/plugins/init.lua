@@ -848,6 +848,12 @@ return {
     keys = {
       { '<leader>ng', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
     },
+    opts = {
+      integrations = {
+        fzf_lua = true,
+        diffview = true,
+      },
+    },
   },
   {
     'tpope/vim-fugitive',
