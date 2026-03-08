@@ -92,6 +92,16 @@ else
   vim.g.python3_host_prog = user_profile .. '/.pyenv/verisons/3.13.1/bin/python3'
 end
 
+-- FIXME: Trying to set the default shell to `pwsh`, for "open with nvim" use
+-- if vim.fn.has 'win32' == 1 and vim.fn.has 'wsl' == 0 then
+--   vim.o.shell = 'pwsh.exe'
+--   vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command $PSStyle.OutputRendering = 'PlainText';"
+--   vim.o.shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+--   vim.o.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+--   vim.o.shellquote = ''
+--   vim.o.shellxquote = ''
+-- end
+
 vim.opt.termguicolors = true
 
 -- Set <space> as the leader key

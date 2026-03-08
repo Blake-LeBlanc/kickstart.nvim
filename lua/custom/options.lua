@@ -143,7 +143,7 @@ vim.g.fzf_preview_window = {}
 vim.g.fzf_force_termguicolors = 1
 vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 } }
 
--- For commands you are not converting here, you can still call vim.cmd
+-- NOTE: Trying to set the default shell to powershell for "open with nvim" stuff...
 -- vim.cmd [[set shell=powershell]]
 -- vim.cmd [[set shellcmdflag=-command]]
 -- vim.cmd [[set shellquote=\"]]
