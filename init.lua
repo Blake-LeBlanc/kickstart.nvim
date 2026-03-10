@@ -92,14 +92,24 @@ else
   vim.g.python3_host_prog = user_profile .. '/.pyenv/verisons/3.13.1/bin/python3'
 end
 
--- FIXME: Trying to set the default shell to `pwsh`, for "open with nvim" use
--- if vim.fn.has 'win32' == 1 and vim.fn.has 'wsl' == 0 then
---   vim.o.shell = 'pwsh.exe'
---   vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command $PSStyle.OutputRendering = 'PlainText';"
---   vim.o.shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
---   vim.o.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+-- NOTE: This sets the default shell to `pwsh`
+-- if vim.fn.has 'win32' == 1 then
+--   vim.o.shelltemp = false
+--   local shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
+--   shellcmdflag = shellcmdflag .. '[Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();'
+--   shellcmdflag = shellcmdflag .. "$PSDefaultParameterValues['Out-File:Encoding']='utf8';"
+--   vim.o.shellpipe = '> %s 2>&1'
 --   vim.o.shellquote = ''
 --   vim.o.shellxquote = ''
+--
+--   if vim.fn.executable 'pwsh.exe' == 1 then
+--     vim.o.shell = 'pwsh.exe'
+--     shellcmdflag = shellcmdflag .. "$PSStyle.OutputRendering = 'PlainText';"
+--     vim.env.__SuppressAnsiEscapeSequences = '1'
+--   else
+--     vim.o.shell = 'powershell.exe'
+--   end
+--   vim.o.shellcmdflag = shellcmdflag
 -- end
 
 vim.opt.termguicolors = true
