@@ -95,6 +95,9 @@ keymap('n', 'A', 'A', opts)
 keymap('n', '<leader>nt', ':Neotree toggle current reveal_force_cwd<CR>', opts)
 keymap('n', '<leader>cd', ':lcd %:p:h<CR>', opts)
 keymap('n', '<leader>CD', ':cd %:p:h<CR>', opts)
+keymap('n', '<leader>fp', function()
+  vim.fn.setreg('+', vim.fn.expand '%:p')
+end, { desc = 'Copy absolute filepath of current buffer to + register' })
 
 -- :FZF related commands
 -- keymap('n', '<C-p>', ':GFiles<CR>', opts)
