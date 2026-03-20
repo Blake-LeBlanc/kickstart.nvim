@@ -76,8 +76,6 @@ local opts = { noremap = true, silent = true }
 
 keymap('n', '<C-j>', 'gj', opts)
 keymap('n', '<C-k>', 'gk', opts)
-keymap('n', '<leader>d', ':lcd %:p:h<CR>', opts)
-keymap('n', '<leader>D', ':cd %:p:h<CR>', opts)
 
 -- NOTE: Replaced with typewriter plugin
 -- keymap('n', 'n', 'nzzzv', opts)
@@ -94,9 +92,9 @@ keymap('n', '<leader>D', ':cd %:p:h<CR>', opts)
 
 -- NOTE: Something seems to be hijacking the default n A command, resetting here
 keymap('n', 'A', 'A', opts)
--- keymap('n', '<leader>nt', ':Neotree toggle left reveal_force_cwd<CR><C-w>=', opts)
 keymap('n', '<leader>nt', ':Neotree toggle current reveal_force_cwd<CR>', opts)
-keymap('n', '<leader>cd', ':cd %:p:h<CR>', opts)
+keymap('n', '<leader>cd', ':lcd %:p:h<CR>', opts)
+keymap('n', '<leader>CD', ':cd %:p:h<CR>', opts)
 
 -- :FZF related commands
 -- keymap('n', '<C-p>', ':GFiles<CR>', opts)
