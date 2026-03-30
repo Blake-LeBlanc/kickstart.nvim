@@ -140,27 +140,27 @@ return {
       -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
-  {
-    'toppair/peek.nvim',
-    event = 'VeryLazy',
-    build = 'deno task --quiet build:fast',
-    config = function()
-      require('peek').setup {
-        auto_load = true,
-        close_on_bdelete = true,
-        syntax = true,
-        theme = 'light',
-        update_on_change = true,
-        app = 'browser',
-        -- app = { 'chromium', '--new-window' },
-        filetype = { 'markdown' },
-        throttle_at = 20000,
-        throttle_time = 'auto',
-      }
-      vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
-      vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
-    end,
-  },
+  -- {
+  --   'toppair/peek.nvim',
+  --   event = 'VeryLazy',
+  --   build = 'deno task --quiet build:fast',
+  --   config = function()
+  --     require('peek').setup {
+  --       auto_load = true,
+  --       close_on_bdelete = true,
+  --       syntax = true,
+  --       theme = 'light',
+  --       update_on_change = true,
+  --       app = 'browser',
+  --       -- app = { 'chromium', '--new-window' },
+  --       filetype = { 'markdown' },
+  --       throttle_at = 20000,
+  --       throttle_time = 'auto',
+  --     }
+  --     vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+  --     vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
+  --   end,
+  -- },
   {
     'markonm/traces.vim',
     event = 'VeryLazy',
@@ -374,8 +374,13 @@ return {
     version = false,
     opts = {},
   },
+  -- {
+  --   'norcalli/nvim-colorizer.lua',
+  --   opts = {},
+  -- },
   {
-    'norcalli/nvim-colorizer.lua',
+    'catgoose/nvim-colorizer.lua',
+    event = 'BufReadPre',
     opts = {},
   },
   -- { 'junegunn/fzf',{{{
@@ -862,5 +867,11 @@ return {
     config = function()
       -- require('vim-fugitive').setup {}
     end,
+  },
+  {
+    'brianhuster/live-preview.nvim',
+    dependencies = {
+      'ibhagwan/fzf-lua',
+    },
   },
 }
