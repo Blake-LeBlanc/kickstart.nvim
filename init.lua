@@ -841,6 +841,7 @@ require('lazy').setup({
           stop_after_first = true,
         },
         javascript = {
+          'prettierd',
           'prettier',
           stop_after_first = true,
         },
