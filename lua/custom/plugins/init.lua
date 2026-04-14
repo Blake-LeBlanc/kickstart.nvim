@@ -91,6 +91,18 @@ return {
   {
     'robertmeta/nofrils',
   },
+  {
+    'ember-theme/nvim',
+    name = 'ember',
+    priority = 1000,
+    config = function()
+      require('ember').setup {
+        -- variant = "ember",
+        -- variant = "ember-soft",
+        variant = 'ember-light',
+      }
+    end,
+  },
   -- {
   --   'pbrisbin/vim-colors-off',
   -- },

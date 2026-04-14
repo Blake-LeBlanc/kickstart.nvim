@@ -841,7 +841,6 @@ require('lazy').setup({
           stop_after_first = true,
         },
         javascript = {
-          'prettierd',
           'prettier',
           stop_after_first = true,
         },
@@ -976,6 +975,7 @@ require('lazy').setup({
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.o.background = 'light'
       vim.cmd.colorscheme 'nofrils-light'
+      -- vim.cmd.colorscheme 'ember-light'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
