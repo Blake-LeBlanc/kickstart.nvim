@@ -157,3 +157,7 @@ vim.g.lazygit_floating_window_scaling_factor = 1.0
 -- nvim-tree
 -- keymap.('n', 'T', cycle_sort, opts 'Cycle Sort')
 -- keymap('n', '<leader>nt', ':NvimTreeToggle<CR>', opts)
+
+-- Grug Far
+keymap('n', '<leader>gf', ':GrugFar<CR>', opts)
+keymap('n', '<leader>gw', ':GrugFarWithin<CR>', opts)
