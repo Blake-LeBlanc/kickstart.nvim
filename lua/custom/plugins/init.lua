@@ -888,20 +888,26 @@ return {
   },
   {
     'stevearc/quicker.nvim',
-    ft = "qf",
+    ft = 'qf',
     ---@module "quicker"
     ---@type quicker.SetupOptions
 
     -- opts = {},
 
     config = function()
-        require('quicker').setup {}
+      require('quicker').setup {}
     end,
   },
   {
     'MagicDuck/grug-far.nvim',
     config = function()
-        require('grug-far').setup {}
+      require('grug-far').setup {}
     end,
   },
+  -- {
+  --   'kevinhwang91/nvim-bqf',
+  --   config = function()
+  --     require('nvim-bqf').setup {}
+  --   end,
+  -- },
 }
