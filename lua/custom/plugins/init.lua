@@ -928,14 +928,14 @@ return {
         function()
           require('fff').find_files()
         end,
-        desc = 'FFFind files',
+        desc = 'FFF Find files',
       },
       {
         '<leader>fg',
         function()
           require('fff').live_grep()
         end,
-        desc = 'LiFFFe grep',
+        desc = 'FFF Live grep',
       },
       {
         '<leader>fz',
@@ -947,7 +947,7 @@ return {
             },
           }
         end,
-        desc = 'Live fffuzy grep',
+        desc = 'FFF Live fuzzy grep',
       },
       {
         '<leader>fc',
@@ -956,7 +956,7 @@ return {
             query = vim.fn.expand '<cword>',
           }
         end,
-        desc = 'Search current word',
+        desc = 'FFF Search current word',
       },
     },
   },
