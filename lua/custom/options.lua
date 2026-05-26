@@ -161,3 +161,6 @@ vim.g.lazygit_floating_window_scaling_factor = 1.0
 -- Grug Far
 keymap('n', '<leader>gf', ':GrugFar<CR>', opts)
 keymap('n', '<leader>gw', ':GrugFarWithin<CR>', opts)
+
+-- Fix for mergetool :diffg/etc command issues
+opt.diffopt:remove 'linematch:40'
