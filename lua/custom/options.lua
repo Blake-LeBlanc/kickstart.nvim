@@ -162,5 +162,14 @@ vim.g.lazygit_floating_window_scaling_factor = 1.0
 keymap('n', '<leader>gf', ':GrugFar<CR>', opts)
 keymap('n', '<leader>gw', ':GrugFarWithin<CR>', opts)
 
+opt.diffopt = {
+  'internal',
+  'filler',
+  'closeoff',
+  'hiddenoff',
+  'algorithm:histogram',
+  -- 'linematch:60',
+}
+
 -- Fix for mergetool :diffg/etc command issues
 opt.diffopt:remove 'linematch:40'
