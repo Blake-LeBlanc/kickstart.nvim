@@ -845,6 +845,10 @@ require('lazy').setup({
           'prettier',
           stop_after_first = true,
         },
+        sql = {
+          'sql-formatter',
+          'postgres-language-server',
+        },
       },
     },
   },
