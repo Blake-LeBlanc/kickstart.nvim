@@ -22,7 +22,7 @@ opt.hlsearch = true
 opt.ignorecase = true
 opt.incsearch = true
 opt.inccommand = 'split'
-opt.laststatus = 2
+opt.laststatus = 3
 opt.linebreak = true
 opt.list = true
 opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }

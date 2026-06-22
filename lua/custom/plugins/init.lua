@@ -91,6 +91,9 @@ return {
   {
     'robertmeta/nofrils',
   },
+  {
+    'kungfusheep/mfd.nvim',
+  },
   -- {
   --   'ember-theme/nvim',
   --   name = 'ember',
@@ -118,6 +121,7 @@ return {
   -- {
   --   'vim-scripts/zenesque.vim',
   -- },
+  --
   -- }}}
   -- { 'rktjmp/lush.nvim',{{{
   -- },}}}
@@ -1048,5 +1052,14 @@ return {
         desc = 'FFF Search current word',
       },
     },
+  },
+  {
+    'igorlfs/nvim-dap-view',
+    opts = {},
+  },
+  {
+    'alchezar/fishbone.nvim',
+    event = 'VeryLazy',
+    opts = {},
   },
 }
