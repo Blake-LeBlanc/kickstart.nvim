@@ -1077,9 +1077,10 @@ return {
     'igorlfs/nvim-dap-view',
     opts = {},
   },
-  {
-    'alchezar/fishbone.nvim',
-    event = 'VeryLazy',
-    opts = {},
-  },
+  -- {
+  --   'alchezar/fishbone.nvim',
+  --   -- NOTE: Seems like a cool little plugin, but I'm not sure how to incorporate it into lualine
+  --   event = 'VeryLazy',
+  --   opts = {},
+  -- },
 }
