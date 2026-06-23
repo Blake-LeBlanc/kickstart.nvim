@@ -471,12 +471,15 @@ return {
     opts = {
       options = {
         icons_enabled = false,
+
         -- theme = "material",
         -- theme = 'onelight',
         theme = 'powerline',
         -- theme = 'base16',
+
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
+
         disabled_filetypes = {
           statusline = {},
           winbar = {},
@@ -494,14 +497,31 @@ return {
       },
       sections = {
         lualine_a = { 'mode' },
-        -- How to disable  text coloring for diff and diagnostics? `colored = false`
         lualine_b = {
-          'branch',
+          {
+            'branch',
+            -- icon = '',
+          },
           'diff',
-          'diagnostics',
+          {
+            'diagnostics',
+            -- symbols = {
+            --   error = '',
+            --   warn = '',
+            --   hint = '',
+            -- },
+          },
         },
         lualine_c = { 'filename' },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_x = {
+          'encoding',
+          'fileformat',
+          {
+            'filetype',
+            colored = false,
+            icon_only = true,
+          },
+        },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
