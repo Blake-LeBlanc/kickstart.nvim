@@ -1020,7 +1020,10 @@ return {
           modes = { 'plain', 'regex', 'fuzzy' },
           trim_whitespace = false,
         },
-        debug = { enabled = false, show_scores = false },
+        debug = {
+          enabled = true,
+          show_scores = true,
+        },
         logging = {
           enabled = true,
           log_file = vim.fn.stdpath 'log' .. '/fff.log',
