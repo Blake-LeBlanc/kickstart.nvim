@@ -173,3 +173,17 @@ opt.diffopt = {
 
 -- Fix for mergetool :diffg/etc command issues
 opt.diffopt:remove 'linematch:40'
+
+-- Enter to navigate to highlighted item in quickfix list
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'qf',
+  callback = function(ev)
+    vim.keymap.set('n', '<CR>', function()
+      vim.cmd('cc ' .. vim.fn.line '.')
+    end, {
+      buffer = ev.buf,
+      silent = true,
+      desc = 'Open highlighted quickfix entry',
+    })
+  end,
+})
